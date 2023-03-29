@@ -1,0 +1,454 @@
+*{
+    margin:0;
+    padding: 0;
+}
+section{
+    text-align: center;
+    padding:10px 5vw;
+    min-height:100vh;
+}
+
+.contentHeading h2{
+    margin:0;
+}
+
+.parentContent{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+    margin: auto;
+}
+
+.parentContent img{
+    width: 150px;
+}
+
+.left,.right{
+    padding:15px 20px;
+    /* min-width:250px;
+    max-width:350px; */
+}
+.left>img{
+    animation: swing1 2s ease-out alternate infinite;
+}
+@keyframes swing1 {
+    0%{
+        transform: rotateY(180deg) rotate(7deg);
+    }
+    100%{
+        transform: rotateY(180deg) rotate(-7deg);
+    }
+}
+
+.right>img{
+    animation: swing2 2.5s ease-in alternate infinite;
+}
+
+@keyframes swing2 {
+    0%{
+        transform: rotate(-7deg);
+    }
+    100%{
+        transform: rotate(7deg);
+    }
+}
+
+
+@media only screen and (max-width:1024px) {
+    .left,.right{
+        width:600px;
+    }
+}
+@media only screen and (min-width:1024px) {
+    .left,.right{
+        width:410px;
+    }
+}
+@media only screen and (min-width:1440px) {
+    .left,.right{
+        padding:15px 40px;
+        width:550px;
+    }
+}
+/* content */
+.content{
+    position: relative;
+    transform-origin: center -54px;
+    border-top:2px solid #aa721e;
+    background-color: #a9a9a935; /* background for low opacity transparency*/
+}
+.leftContent{
+    animation: hang1 3s ease-out alternate infinite;
+}
+
+.rightContent{
+    animation: hang2 2s ease-in alternate infinite;
+}
+.leftContent:hover , .rightContent:hover {
+    animation-play-state: paused;
+  }
+.leftContent::after,.rightContent::after{
+    position: absolute;
+    content:'';
+    left:50%;
+    top:-54px;
+    width:8px;
+    height:8px;
+    border-radius:5px;
+    transform: translate(25%,0);
+    background: radial-gradient( #020100, #ff9900);
+}
+.leftContent::before,.rightContent::before{
+    position: absolute;
+    content: '';
+    width:8px;
+    left:50%;
+    top:-54px;
+    height:50px;
+    border:2px solid #aa721e;
+    background-color: none;
+    border-radius: 40% 40% 0 0;
+}
+
+@keyframes hang1 {
+    to{
+        transform:  rotate(-2deg);
+    }
+    from{
+        transform: rotate(2deg);
+    }
+}
+
+@keyframes hang2 {
+    to{
+        transform:  rotate(2deg);
+    }
+    from{
+        transform: rotate(-2deg);
+    }
+}
+
+section h2{   /* This is one css for all heading of the section if problem add these to individual headings*/
+    width:0;
+    overflow: hidden;
+    transition: width 10s ease-out;
+    text-align: left;
+}
+/* Introduction */
+.Introduction h2{
+    margin:0 auto;
+    animation: lengthChangeIntroduction ease-in 10s alternate infinite;
+}
+
+@keyframes lengthChangeIntroduction {
+    to{
+        width:0;
+    }
+    from{
+        width: 70px;
+    }
+    
+}
+
+/* Education */
+
+.Education{
+    margin: auto;
+    text-align: center;
+}
+.Education h2{
+    margin:0 auto;
+    animation: lengthChangeEducation ease-in 10s alternate infinite;
+}
+
+@keyframes lengthChangeEducation {
+    to{
+        width:0;
+    }
+    from{
+        width: 110px;
+    }
+    
+}
+.Education p,.Education h3{
+    margin:3px 0;
+}
+
+.EducationData{
+    width:320px;
+    margin:auto;
+    margin-top: 30px;
+}
+
+.EducationData>div{
+    display:flex;
+}
+
+.circle{
+    height:6px;
+    width:6px;
+    border-radius:50%;
+    background-color: #aa721e;
+    scale:1.4;
+    margin:auto;
+}
+.line{
+    margin:auto;
+    background-color: #aa721e;
+    height:155px;
+    width:2px;
+}
+
+.InstitutionDetails{
+    box-sizing: border-box;
+    width:165px;
+    width:calc(50% - 3px);
+    position:relative;
+    top:-15px;
+    height:140px;
+}
+.leftEducationBox{
+    text-align: left;
+    padding-right:5px;
+}
+.rightEducationBox{
+    padding-left:5px;
+    text-align: right;
+}
+
+.InstitutionDetails h3{
+    font-size: 18px;
+}
+
+.InstitutionDetails p{
+    font-size: 15px;
+    cursor:pointer;
+    position: relative;
+}
+.InstitutionDetails p:hover{
+    font-weight: bold;
+    scale:1.02;
+}
+.InstitutionDetails p a{
+    text-decoration: none;
+}
+.InstitutionDetails p a:visited,.InstitutionDetails p a:active{
+    text-decoration: none;
+    color: inherit;
+    background-color: transparent;
+}
+.InstitutionDetails span{
+    font-size: 12px;
+}
+.InstitutionDetails span:hover{
+    font-weight:600;
+}
+
+@media only screen and (min-width:800px){
+    .EducationData{
+        width:600px;
+        padding:0 20px;
+    }
+    .line{
+        width:4px;
+    }
+    .circle{
+        width:10px;
+        height:10px;
+    }
+    .InstitutionDetails{
+        width:calc(50% - 5px);
+    }
+    .InstitutionDetails h3{
+        font-size: 21px;
+    }
+    .InstitutionDetails p{
+        font-size: 17px;
+    }
+    .InstitutionDetails span{
+        font-size: 15px;
+    }
+    
+}
+@media only screen and (min-width:1400px){
+    .EducationData{
+        width:900px;
+        padding:0 40px;
+    }
+    .line{
+        width:6px;
+    }
+    .circle{
+        width:14px;
+        height:14px;
+    }
+    .InstitutionDetails{
+        width:calc(50% - 7px);
+    }
+    .InstitutionDetails h3{
+        font-size: 24px;
+    }
+    .InstitutionDetails p{
+        font-size: 20px;
+    }
+    .InstitutionDetails span{
+        font-size: 18px;
+    }
+
+}
+
+/* Education CSS Ends Here*/
+
+
+
+/* Skills Section */
+.skills h2{
+    margin:0 auto;
+    animation: lengthChangeSkills ease-in 10s alternate infinite;
+}
+
+@keyframes lengthChangeSkills {
+    to{
+        width:0;
+    }
+    from{
+        width: 60px;
+    }
+    
+}
+.skillsHeading{
+    margin:auto;
+    width:300px;
+    font-size: 21px;
+    padding: 3px;
+    font-weight: 700;
+}
+.skillsHeading li{
+    list-style: none;
+    font-size: 17px;
+    padding:2px 35px;
+    font-weight: 550;
+    text-align: left;
+}
+
+.skillsHeading li img{
+    display: inline;
+    width:20px;
+    float: right;
+    animation: twist 1.5s linear alternate infinite;
+}
+@keyframes twist {
+    0%{
+        transform: rotateY(70deg);
+    }
+    100%{
+        transform: rotateY(-70deg);
+    }
+    
+}
+/* Skills Section Ends Here*/
+
+
+/* Projects Starts here*/
+.project h2{
+    margin:0 auto;
+    animation: lengthChangeProject ease-in 10s alternate infinite;
+}
+
+@keyframes lengthChangeProject {
+    to{
+        width:0;
+    }
+    from{
+        width: 85px;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .projectContainer {
+    background-image: url("https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg");
+    width: 95%;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0 0 5px 5px;
+    padding:10px;
+    /* text-align: left; */
+    margin:auto;
+  }
+  .projectDetails {
+    position: absolute;
+    bottom: calc(-100% + 65px); 
+    box-sizing: border-box;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .projectDetails h2{
+      font-size: 30px;
+      padding:5px 0;
+      animation: none;
+      width:fit-content;
+      margin-left: 0;
+  }
+  
+  .projectContainer:hover .projectDetails {
+    bottom: 10px;
+    background-color: rgba(221, 236, 237, 0.216);
+    border-radius: 9px;
+  }
+  
+  .linksForButtons{
+      width:100%;
+      position:absolute;
+      bottom:10%;
+      display:flex;
+      justify-content: space-around;
+  }
+  .linksForButtons button{
+      outline:0;
+      border:2px solid black;
+      padding:3px;
+      border-radius:10px;
+      position:relative;
+  }
+  .linksForButtons button:hover{
+      bottom:2px;
+      right:0.5px;
+      box-shadow:0.5px 2px black;
+  }
+  .linksForButtons a{
+      text-decoration: none;
+  }
+  
+/* Projects Ends here*/
+
+/* Contact Me Starts Here */
+.contact h2{
+    margin:0 auto;
+    white-space:nowrap;
+    animation: lengthChangeContact ease-in 10s alternate infinite;
+}
+@keyframes lengthChangeContact {
+    to{
+        width:0;
+    }
+    from{
+        width: 120px;
+    }
+}
+.inputBox{
+    position: relative;
+    box-sizing: border-box;
+}
+.inputBox span{
+    position: absolute;
+    left:0;
+}
+/* Contact Me Ends Here */
