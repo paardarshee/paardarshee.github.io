@@ -1,15 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Poppins&family=Roboto+Slab&family=Ubuntu&display=swap');
 section {
   text-align: center;
   padding: 10px 5vw;
   margin: 0;
-  min-height: calc(100vh + 5px);
+  min-height: 100vh;
+  font-family: 'Ubuntu', sans-serif;
 }
 #main {
   position: relative;
-  scale:1.01;
+  scale:1.02;
 }
 .contentHeading h2 {
   margin: 0;
+  color:var(--text-color);
+  white-space: nowrap;
 }
 
 .parentContent {
@@ -79,7 +83,7 @@ section {
   position: relative;
   transform-origin: center -54px;
   border-top: 2px solid #aa721e;
-  background-color: #a9a9a935; /* background for low opacity transparency*/
+  background-color: #0000003a; /* background for low opacity transparency*/
 }
 .leftContent {
   animation: hang1 3s ease-out alternate infinite;
@@ -142,6 +146,8 @@ section h2 {
   transition: width 10s ease-out;
   text-align: left;
 }
+
+
 /* Introduction */
 .Introduction h2 {
   margin: 0 auto;
@@ -153,7 +159,7 @@ section h2 {
     width: 0;
   }
   from {
-    width: 70px;
+    width: 110px;
   }
 }
 .bioPic {
@@ -172,6 +178,15 @@ section h2 {
 }
 .Introduction .leftContent img:hover {
   filter: none;
+}
+.Introduction .rightContent{
+  color:#e3d8b6;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: left;
+  padding-left: 10px;
 }
 
 /* Education */
@@ -193,8 +208,8 @@ section h2 {
     width: 110px;
   }
 }
-.Education p,
-.Education h3 {
+
+.Education p{
   margin: 3px 0;
 }
 
@@ -212,13 +227,13 @@ section h2 {
   height: 6px;
   width: 6px;
   border-radius: 50%;
-  background-color: #aa721e;
+  background-color: rgba(255, 166, 0, 0.862);
   scale: 1.4;
   margin: auto;
 }
 .line {
   margin: auto;
-  background-color: #aa721e;
+  background-color: rgba(255, 166, 0, 0.862);
   height: 155px;
   width: 2px;
 }
@@ -241,6 +256,8 @@ section h2 {
 }
 
 .InstitutionDetails h3 {
+  margin: 3px 0;
+  color:orange;
   font-size: 18px;
 }
 
@@ -249,24 +266,23 @@ section h2 {
   cursor: pointer;
   position: relative;
 }
-.InstitutionDetails p:hover {
+.InstitutionDetails p:hover a{
   font-weight: bold;
+  color:rgb(182, 140, 61);
   scale: 1.02;
 }
 .InstitutionDetails p a {
+  color:rgb(121, 93, 42);
   text-decoration: none;
 }
-.InstitutionDetails p a:visited,
-.InstitutionDetails p a:active {
-  text-decoration: none;
-  color: inherit;
-  background-color: transparent;
-}
+
 .InstitutionDetails span {
   font-size: 12px;
+  color:rgb(121, 93, 42);
 }
-.InstitutionDetails span:hover {
-  font-weight: 600;
+.InstitutionDetails span i{
+  margin-right:5px;
+  color:rgb(254, 196, 88);
 }
 
 @media only screen and (min-width: 800px) {
@@ -342,13 +358,16 @@ section h2 {
   font-size: 21px;
   padding: 3px;
   font-weight: 700;
+  color:orange;
 }
 .skillsHeading li {
   list-style: none;
-  font-size: 17px;
+  font-size: 16px;
+  letter-spacing: 1.5px;
+  font-family: 'Roboto Slab', serif;
   padding: 2px 35px;
-  font-weight: 550;
   text-align: left;
+  color:#ffe6b0;
 }
 
 .skillsHeading li img {
@@ -382,21 +401,23 @@ section h2 {
   }
 }
 
-* {
-  margin: 0;
-  padding: 0;
-}
-
 .projectContainer {
   background-image: url("https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg");
-  width: 95%;
+  background-position: center;
+  background-size: cover;
+  width: calc(100%-20px);
   height: 200px;
   position: relative;
   overflow: hidden;
   border-radius: 0 0 5px 5px;
-  padding: 10px;
-  /* text-align: left; */
+  padding:10px;
   margin: auto;
+}
+.Keep-It{
+  background-image: url("../assets/Keep\ It.gif");
+}
+.StackCalc{
+  background-image: url("../assets/StackCalc.gif");
 }
 .projectDetails {
   position: absolute;
@@ -407,18 +428,27 @@ section h2 {
   transition: all 0.5s ease-in-out;
 }
 
-.projectDetails h2 {
+.projectDetails h3 {
+  color: var(--down);
   font-size: 30px;
   padding: 5px 0;
   animation: none;
   width: fit-content;
   margin-left: 0;
 }
-
+.projectDetails p{
+  text-align: left;
+  margin-left: 5px;
+  font-size: 20px;
+  font-weight: 800;
+  font-family: 'Roboto Slab', serif;
+  color: var(--up);
+}
 .projectContainer:hover .projectDetails {
   bottom: 10px;
-  background-color: rgba(221, 236, 237, 0.216);
+  background-color: rgba(203, 170, 108, 0.313);
   border-radius: 9px;
+  padding:10px;
 }
 
 .linksForButtons {
@@ -430,18 +460,32 @@ section h2 {
 }
 .linksForButtons button {
   outline: 0;
-  border: 2px solid black;
+  border: 3px solid orange;
   padding: 3px;
   border-radius: 10px;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 600;
   position: relative;
+  cursor:pointer;
 }
 .linksForButtons button:hover {
   bottom: 2px;
+  border:0;
+  background-color: orange;
   right: 0.5px;
-  box-shadow: 0.5px 2px black;
+  scale:1.01;
+  box-shadow: 3px 2.5px rgb(105, 68, 0);
 }
 .linksForButtons a {
   text-decoration: none;
+  color: orange;
+}
+.linksForButtons button a i{
+  padding:4px;
+}
+.linksForButtons button:hover a{
+  color:white;
 }
 
 /* Projects Ends here*/
@@ -478,6 +522,7 @@ section h2 {
   position: relative;
   box-sizing: border-box;
   display: inline;
+  font-family: 'Josefin Sans', sans-serif;
 }
 input,
 textarea {
@@ -489,6 +534,7 @@ textarea {
   box-sizing: border-box;
   font-size: 18px;
   border-radius: 15px;
+  color:orange;
 }
 textarea {
   max-width: 90%;
@@ -496,21 +542,22 @@ textarea {
 }
 .inputBox span {
   position: absolute;
-  margin-top: 10px;
+  margin-top: 16px;
   left: 15px;
   font-size: 18px;
   transition: all ease-in 0.2s;
   text-transform: uppercase;
+  color:rgb(253, 181, 46);
 }
 .inputBox input:valid ~ span,
 .inputBox input:focus ~ span,
 .inputBox textarea:valid ~ span,
 .inputBox textarea:focus ~ span {
-  transform: translateX(10px) translateY(-15px);
+  transform: translateX(18px) translateY(-15px);
 }
 .inputName,
 .inputEmail {
-  width: 42%;
+  width: 44%;
 }
 .linksToHandles {
   margin-left: 40px;
@@ -529,6 +576,7 @@ textarea {
   font-size: 20px;
   top: 20%;
   right: 100%;
+  color:rgb(160, 124, 56);
 }
 .individualLinks a i {
   color: orange;
@@ -555,9 +603,12 @@ textarea {
   width: 100vw;
   left: 0;
   bottom: 0;
-  height: 40px;
+  height: 60px;
   background-color: rgba(128, 128, 128, 0.603);
   color: white;
+}
+.footer p{
+  padding:3px;
 }
 @media only screen and (max-width: 800px) {
   .linksToHandles {
@@ -566,7 +617,6 @@ textarea {
     justify-content: space-around;
   }
   .individualLinks a p {
-    color: black;
     top: -30%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
@@ -578,9 +628,6 @@ textarea {
   .inputEmail,
   .inputName {
     width: 40%;
-  }
-  .footer{
-    height:60px;
   }
 }
 #aboutme-link {

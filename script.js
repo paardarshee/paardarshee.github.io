@@ -39,17 +39,23 @@ setInterval(createBubble, 150);
 // Setting specific project  height for the image dimension
 const projectContainer = document.getElementsByClassName("projectContainer");
 for (let ele of projectContainer) {
-  ele.style.height = `${0.45 * +ele.offsetWidth}px`;
+  ele.style.height = `${0.52 * +ele.offsetWidth}px`;
 }
 
 // About Me Link At end of the page
 
 const aboutmeLink = document.querySelector('#aboutme-link');
-aboutmeLink.addEventListener('click', function(event) {
+const upButton = document.querySelector('#upButton');
+const handleClickOnAboutMe = (event)=>{
   event.preventDefault()
   const aboutmePosition = document.querySelector('#main').offsetTop;
   document.querySelector('#main').scrollTo({
     top: aboutmePosition,
     behavior: 'smooth'
   });
-});
+}
+aboutmeLink.addEventListener('click', handleClickOnAboutMe);
+upButton.addEventListener('click',handleClickOnAboutMe)
+
+
+
