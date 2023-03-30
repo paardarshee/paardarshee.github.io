@@ -1,564 +1,589 @@
-section{
-    text-align: center;
-    padding:10px 5vw;
-    margin:0;
-    min-height:100vh;
+section {
+  text-align: center;
+  padding: 10px 5vw;
+  margin: 0;
+  min-height: calc(100vh + 5px);
 }
-#main{
-    position:relative;
-    top:3px
+#main {
+  position: relative;
+  scale:1.01;
 }
-.contentHeading h2{
-    margin:0;
-}
-
-.parentContent{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    text-align: center;
-    margin: auto;
+.contentHeading h2 {
+  margin: 0;
 }
 
-.parentContent img{
-    width: 150px;
+.parentContent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: center;
+  margin: auto;
 }
 
-.left,.right{
-    padding:15px 20px;
-    /* min-width:250px;
+.parentContent img {
+  width: 150px;
+}
+
+.left,
+.right {
+  padding: 15px 20px;
+  /* min-width:250px;
     max-width:350px; */
 }
-.left>img{
-    animation: swing1 2s ease-out alternate infinite;
+.left > img {
+  animation: swing1 2s ease-out alternate infinite;
 }
 @keyframes swing1 {
-    0%{
-        transform: rotateY(180deg) rotate(7deg);
-    }
-    100%{
-        transform: rotateY(180deg) rotate(-7deg);
-    }
+  0% {
+    transform: rotateY(180deg) rotate(7deg);
+  }
+  100% {
+    transform: rotateY(180deg) rotate(-7deg);
+  }
 }
 
-.right>img{
-    animation: swing2 2.5s ease-in alternate infinite;
+.right > img {
+  animation: swing2 2.5s ease-in alternate infinite;
 }
 
 @keyframes swing2 {
-    0%{
-        transform: rotate(-7deg);
-    }
-    100%{
-        transform: rotate(7deg);
-    }
+  0% {
+    transform: rotate(-7deg);
+  }
+  100% {
+    transform: rotate(7deg);
+  }
 }
 
-
-@media only screen and (max-width:1024px) {
-    .left,.right{
-        width:600px;
-    }
+@media only screen and (max-width: 1024px) {
+  .left,
+  .right {
+    width: 600px;
+  }
 }
-@media only screen and (min-width:1024px) {
-    .left,.right{
-        width:410px;
-    }
+@media only screen and (min-width: 1024px) {
+  .left,
+  .right {
+    width: 410px;
+  }
 }
-@media only screen and (min-width:1440px) {
-    .left,.right{
-        padding:15px 40px;
-        width:550px;
-    }
+@media only screen and (min-width: 1440px) {
+  .left,
+  .right {
+    padding: 15px 40px;
+    width: 550px;
+  }
 }
 /* content */
-.content{
-    position: relative;
-    transform-origin: center -54px;
-    border-top:2px solid #aa721e;
-    background-color: #a9a9a935; /* background for low opacity transparency*/
+.content {
+  position: relative;
+  transform-origin: center -54px;
+  border-top: 2px solid #aa721e;
+  background-color: #a9a9a935; /* background for low opacity transparency*/
 }
-.leftContent{
-    animation: hang1 3s ease-out alternate infinite;
+.leftContent {
+  animation: hang1 3s ease-out alternate infinite;
 }
 
-.rightContent{
-    animation: hang2 2s ease-in alternate infinite;
+.rightContent {
+  animation: hang2 2s ease-in alternate infinite;
 }
-.leftContent:hover , .rightContent:hover {
-    animation-play-state: paused;
-  }
-.leftContent::after,.rightContent::after{
-    position: absolute;
-    content:'';
-    left:50%;
-    top:-54px;
-    width:8px;
-    height:8px;
-    border-radius:5px;
-    transform: translate(25%,0);
-    background: radial-gradient( #020100, #ff9900);
+.leftContent:hover,
+.rightContent:hover {
+  animation-play-state: paused;
 }
-.leftContent::before,.rightContent::before{
-    position: absolute;
-    content: '';
-    width:8px;
-    left:50%;
-    top:-54px;
-    height:50px;
-    border:2px solid #aa721e;
-    background-color: none;
-    border-radius: 40% 40% 0 0;
+.leftContent::after,
+.rightContent::after {
+  position: absolute;
+  content: "";
+  left: 50%;
+  top: -54px;
+  width: 8px;
+  height: 8px;
+  border-radius: 5px;
+  transform: translate(25%, 0);
+  background: radial-gradient(#020100, #ff9900);
+}
+.leftContent::before,
+.rightContent::before {
+  position: absolute;
+  content: "";
+  width: 8px;
+  left: 50%;
+  top: -54px;
+  height: 50px;
+  border: 2px solid #aa721e;
+  background-color: none;
+  border-radius: 40% 40% 0 0;
 }
 
 @keyframes hang1 {
-    to{
-        transform:  rotate(-2deg);
-    }
-    from{
-        transform: rotate(2deg);
-    }
+  to {
+    transform: rotate(-2deg);
+  }
+  from {
+    transform: rotate(2deg);
+  }
 }
 
 @keyframes hang2 {
-    to{
-        transform:  rotate(2deg);
-    }
-    from{
-        transform: rotate(-2deg);
-    }
+  to {
+    transform: rotate(2deg);
+  }
+  from {
+    transform: rotate(-2deg);
+  }
 }
 
-section h2{   /* This is one css for all heading of the section if problem add these to individual headings*/
-    width:0;
-    overflow: hidden;
-    transition: width 10s ease-out;
-    text-align: left;
+section h2 {
+  /* This is one css for all heading of the section if problem add these to individual headings*/
+  width: 0;
+  overflow: hidden;
+  transition: width 10s ease-out;
+  text-align: left;
 }
 /* Introduction */
-.Introduction h2{
-    margin:0 auto;
-    animation: lengthChangeIntroduction ease-in 10s alternate infinite;
+.Introduction h2 {
+  margin: 0 auto;
+  animation: lengthChangeIntroduction ease-in 10s alternate infinite;
 }
 
 @keyframes lengthChangeIntroduction {
-    to{
-        width:0;
-    }
-    from{
-        width: 70px;
-    }
-    
+  to {
+    width: 0;
+  }
+  from {
+    width: 70px;
+  }
+}
+.bioPic {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0
+  );
+  scale:0.8; /* background for low opacity transparency*/
+}
+.Introduction .leftContent img {
+  width: 100%;
+  border-radius: 0 0 5px 10px;
+  filter: invert(10%) grayscale(50%) brightness(80%);
+}
+.Introduction .leftContent img:hover {
+  filter: none;
 }
 
 /* Education */
 
-.Education{
-    margin: auto;
-    text-align: center;
+.Education {
+  margin: auto;
+  text-align: center;
 }
-.Education h2{
-    margin:0 auto;
-    animation: lengthChangeEducation ease-in 10s alternate infinite;
+.Education h2 {
+  margin: 0 auto;
+  animation: lengthChangeEducation ease-in 10s alternate infinite;
 }
 
 @keyframes lengthChangeEducation {
-    to{
-        width:0;
-    }
-    from{
-        width: 110px;
-    }
-    
+  to {
+    width: 0;
+  }
+  from {
+    width: 110px;
+  }
 }
-.Education p,.Education h3{
-    margin:3px 0;
-}
-
-.EducationData{
-    width:320px;
-    margin:auto;
-    margin-top: 30px;
+.Education p,
+.Education h3 {
+  margin: 3px 0;
 }
 
-.EducationData>div{
-    display:flex;
+.EducationData {
+  width: 320px;
+  margin: auto;
+  margin-top: 30px;
 }
 
-.circle{
-    height:6px;
-    width:6px;
-    border-radius:50%;
-    background-color: #aa721e;
-    scale:1.4;
-    margin:auto;
-}
-.line{
-    margin:auto;
-    background-color: #aa721e;
-    height:155px;
-    width:2px;
+.EducationData > div {
+  display: flex;
 }
 
-.InstitutionDetails{
-    box-sizing: border-box;
-    width:165px;
-    width:calc(50% - 3px);
-    position:relative;
-    top:-15px;
-    height:140px;
+.circle {
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  background-color: #aa721e;
+  scale: 1.4;
+  margin: auto;
 }
-.leftEducationBox{
-    text-align: left;
-    padding-right:5px;
-}
-.rightEducationBox{
-    padding-left:5px;
-    text-align: right;
+.line {
+  margin: auto;
+  background-color: #aa721e;
+  height: 155px;
+  width: 2px;
 }
 
-.InstitutionDetails h3{
-    font-size: 18px;
+.InstitutionDetails {
+  box-sizing: border-box;
+  width: 165px;
+  width: calc(50% - 3px);
+  position: relative;
+  top: -15px;
+  height: 140px;
+}
+.leftEducationBox {
+  text-align: left;
+  padding-right: 5px;
+}
+.rightEducationBox {
+  padding-left: 5px;
+  text-align: right;
 }
 
-.InstitutionDetails p{
+.InstitutionDetails h3 {
+  font-size: 18px;
+}
+
+.InstitutionDetails p {
+  font-size: 15px;
+  cursor: pointer;
+  position: relative;
+}
+.InstitutionDetails p:hover {
+  font-weight: bold;
+  scale: 1.02;
+}
+.InstitutionDetails p a {
+  text-decoration: none;
+}
+.InstitutionDetails p a:visited,
+.InstitutionDetails p a:active {
+  text-decoration: none;
+  color: inherit;
+  background-color: transparent;
+}
+.InstitutionDetails span {
+  font-size: 12px;
+}
+.InstitutionDetails span:hover {
+  font-weight: 600;
+}
+
+@media only screen and (min-width: 800px) {
+  .EducationData {
+    width: 600px;
+    padding: 0 20px;
+  }
+  .line {
+    width: 4px;
+  }
+  .circle {
+    width: 10px;
+    height: 10px;
+  }
+  .InstitutionDetails {
+    width: calc(50% - 5px);
+  }
+  .InstitutionDetails h3 {
+    font-size: 21px;
+  }
+  .InstitutionDetails p {
+    font-size: 17px;
+  }
+  .InstitutionDetails span {
     font-size: 15px;
-    cursor:pointer;
-    position: relative;
+  }
 }
-.InstitutionDetails p:hover{
-    font-weight: bold;
-    scale:1.02;
-}
-.InstitutionDetails p a{
-    text-decoration: none;
-}
-.InstitutionDetails p a:visited,.InstitutionDetails p a:active{
-    text-decoration: none;
-    color: inherit;
-    background-color: transparent;
-}
-.InstitutionDetails span{
-    font-size: 12px;
-}
-.InstitutionDetails span:hover{
-    font-weight:600;
-}
-
-@media only screen and (min-width:800px){
-    .EducationData{
-        width:600px;
-        padding:0 20px;
-    }
-    .line{
-        width:4px;
-    }
-    .circle{
-        width:10px;
-        height:10px;
-    }
-    .InstitutionDetails{
-        width:calc(50% - 5px);
-    }
-    .InstitutionDetails h3{
-        font-size: 21px;
-    }
-    .InstitutionDetails p{
-        font-size: 17px;
-    }
-    .InstitutionDetails span{
-        font-size: 15px;
-    }
-    
-}
-@media only screen and (min-width:1400px){
-    .EducationData{
-        width:900px;
-        padding:0 40px;
-    }
-    .line{
-        width:6px;
-    }
-    .circle{
-        width:14px;
-        height:14px;
-    }
-    .InstitutionDetails{
-        width:calc(50% - 7px);
-    }
-    .InstitutionDetails h3{
-        font-size: 24px;
-    }
-    .InstitutionDetails p{
-        font-size: 20px;
-    }
-    .InstitutionDetails span{
-        font-size: 18px;
-    }
-
+@media only screen and (min-width: 1400px) {
+  .EducationData {
+    width: 900px;
+    padding: 0 40px;
+  }
+  .line {
+    width: 6px;
+  }
+  .circle {
+    width: 14px;
+    height: 14px;
+  }
+  .InstitutionDetails {
+    width: calc(50% - 7px);
+  }
+  .InstitutionDetails h3 {
+    font-size: 24px;
+  }
+  .InstitutionDetails p {
+    font-size: 20px;
+  }
+  .InstitutionDetails span {
+    font-size: 18px;
+  }
 }
 
 /* Education CSS Ends Here*/
 
-
-
 /* Skills Section */
-.skills h2{
-    margin:0 auto;
-    animation: lengthChangeSkills ease-in 10s alternate infinite;
+.skills h2 {
+  margin: 0 auto;
+  animation: lengthChangeSkills ease-in 10s alternate infinite;
 }
 
 @keyframes lengthChangeSkills {
-    to{
-        width:0;
-    }
-    from{
-        width: 60px;
-    }
-    
+  to {
+    width: 0;
+  }
+  from {
+    width: 60px;
+  }
 }
-.skillsHeading{
-    margin:auto;
-    width:300px;
-    font-size: 21px;
-    padding: 3px;
-    font-weight: 700;
+.skillsHeading {
+  margin: auto;
+  width: 300px;
+  font-size: 21px;
+  padding: 3px;
+  font-weight: 700;
 }
-.skillsHeading li{
-    list-style: none;
-    font-size: 17px;
-    padding:2px 35px;
-    font-weight: 550;
-    text-align: left;
+.skillsHeading li {
+  list-style: none;
+  font-size: 17px;
+  padding: 2px 35px;
+  font-weight: 550;
+  text-align: left;
 }
 
-.skillsHeading li img{
-    display: inline;
-    width:20px;
-    float: right;
-    animation: twist 1.5s linear alternate infinite;
+.skillsHeading li img {
+  display: inline;
+  width: 20px;
+  float: right;
+  animation: twist 1.5s linear alternate infinite;
 }
 @keyframes twist {
-    0%{
-        transform: rotateY(70deg);
-    }
-    100%{
-        transform: rotateY(-70deg);
-    }
-    
+  0% {
+    transform: rotateY(70deg);
+  }
+  100% {
+    transform: rotateY(-70deg);
+  }
 }
 /* Skills Section Ends Here*/
 
-
 /* Projects Starts here*/
-.project h2{
-    margin:0 auto;
-    animation: lengthChangeProject ease-in 10s alternate infinite;
+.project h2 {
+  margin: 0 auto;
+  animation: lengthChangeProject ease-in 10s alternate infinite;
 }
 
 @keyframes lengthChangeProject {
-    to{
-        width:0;
-    }
-    from{
-        width: 85px;
-    }
+  to {
+    width: 0;
+  }
+  from {
+    width: 85px;
+  }
 }
 
 * {
-    margin: 0;
-    padding: 0;
-  }
-  
-  .projectContainer {
-    background-image: url("https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg");
-    width: 95%;
-    height: 200px;
-    position: relative;
-    overflow: hidden;
-    border-radius: 0 0 5px 5px;
-    padding:10px;
-    /* text-align: left; */
-    margin:auto;
-  }
-  .projectDetails {
-    position: absolute;
-    bottom: calc(-100% + 65px); 
-    box-sizing: border-box;
-    width: calc(100% - 20px);
-    height: calc(100% - 20px);
-    transition: all 0.5s ease-in-out;
-  }
-  
-  .projectDetails h2{
-      font-size: 30px;
-      padding:5px 0;
-      animation: none;
-      width:fit-content;
-      margin-left: 0;
-  }
-  
-  .projectContainer:hover .projectDetails {
-    bottom: 10px;
-    background-color: rgba(221, 236, 237, 0.216);
-    border-radius: 9px;
-  }
-  
-  .linksForButtons{
-      width:100%;
-      position:absolute;
-      bottom:10%;
-      display:flex;
-      justify-content: space-around;
-  }
-  .linksForButtons button{
-      outline:0;
-      border:2px solid black;
-      padding:3px;
-      border-radius:10px;
-      position:relative;
-  }
-  .linksForButtons button:hover{
-      bottom:2px;
-      right:0.5px;
-      box-shadow:0.5px 2px black;
-  }
-  .linksForButtons a{
-      text-decoration: none;
-  }
-  
+  margin: 0;
+  padding: 0;
+}
+
+.projectContainer {
+  background-image: url("https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg");
+  width: 95%;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0 0 5px 5px;
+  padding: 10px;
+  /* text-align: left; */
+  margin: auto;
+}
+.projectDetails {
+  position: absolute;
+  bottom: calc(-100% + 65px);
+  box-sizing: border-box;
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  transition: all 0.5s ease-in-out;
+}
+
+.projectDetails h2 {
+  font-size: 30px;
+  padding: 5px 0;
+  animation: none;
+  width: fit-content;
+  margin-left: 0;
+}
+
+.projectContainer:hover .projectDetails {
+  bottom: 10px;
+  background-color: rgba(221, 236, 237, 0.216);
+  border-radius: 9px;
+}
+
+.linksForButtons {
+  width: 100%;
+  position: absolute;
+  bottom: 10%;
+  display: flex;
+  justify-content: space-around;
+}
+.linksForButtons button {
+  outline: 0;
+  border: 2px solid black;
+  padding: 3px;
+  border-radius: 10px;
+  position: relative;
+}
+.linksForButtons button:hover {
+  bottom: 2px;
+  right: 0.5px;
+  box-shadow: 0.5px 2px black;
+}
+.linksForButtons a {
+  text-decoration: none;
+}
+
 /* Projects Ends here*/
 
 /* Contact Me Starts Here */
-.contact{
-    position: relative;
+.contact {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
 }
-.contact h2{
-    margin:0 auto;
-    white-space:nowrap;
-    animation: lengthChangeContact ease-in 10s alternate infinite;
+.contact h2 {
+  margin: 0 auto;
+  white-space: nowrap;
+  animation: lengthChangeContact ease-in 10s alternate infinite;
 }
 @keyframes lengthChangeContact {
-    to{
-        width:0;
-    }
-    from{
-        width: 120px;
-    }
+  to {
+    width: 0;
+  }
+  from {
+    width: 120px;
+  }
 }
-.contactFrame{
-    width:600px;
-    margin: auto;
-    display:flex;
+.contactFrame {
+  width: 600px;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.inputBox {
+  position: relative;
+  box-sizing: border-box;
+  display: inline;
+}
+input,
+textarea {
+  background-color: rgba(10, 57, 122, 0.311);
+  border: 0;
+  outline: 0;
+  padding: 10px;
+  margin: 5px;
+  box-sizing: border-box;
+  font-size: 18px;
+  border-radius: 15px;
+}
+textarea {
+  max-width: 90%;
+  min-width: 90%;
+}
+.inputBox span {
+  position: absolute;
+  margin-top: 10px;
+  left: 15px;
+  font-size: 18px;
+  transition: all ease-in 0.2s;
+  text-transform: uppercase;
+}
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span,
+.inputBox textarea:valid ~ span,
+.inputBox textarea:focus ~ span {
+  transform: translateX(10px) translateY(-15px);
+}
+.inputName,
+.inputEmail {
+  width: 42%;
+}
+.linksToHandles {
+  margin-left: 40px;
+  display: flex;
+  flex-direction: column;
+}
+.individualLinks {
+  margin: 5px;
+  cursor: pointer;
+  position: relative;
+  margin-top: 18px;
+}
+.individualLinks a p {
+  display: none;
+  position: absolute;
+  font-size: 20px;
+  top: 20%;
+  right: 100%;
+}
+.individualLinks a i {
+  color: orange;
+  font-size: 30px;
+  padding: 6px;
+  margin-left: 5px;
+  background-color: rgb(211 211 211/41%);
+  border-radius: 40px;
+  width: 30px;
+  height: 30px;
+}
+
+.individualLinks a i:hover {
+  color: white;
+  background-color: orange;
+}
+.linksToHandles .individualLinks a:hover p {
+  width: fit-content;
+  display: block;
+}
+
+.footer {
+  align-items: flex-end;
+  width: 100vw;
+  left: 0;
+  bottom: 0;
+  height: 40px;
+  background-color: rgba(128, 128, 128, 0.603);
+  color: white;
+}
+@media only screen and (max-width: 800px) {
+  .linksToHandles {
+    flex-direction: row;
+    margin: 5px 0;
     justify-content: space-around;
-    padding: 10px;
+  }
+  .individualLinks a p {
+    color: black;
+    top: -30%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  .contactFrame {
+    flex-direction: column-reverse;
+    width: 90%;
+  }
+  .inputEmail,
+  .inputName {
+    width: 40%;
+  }
+  .footer{
+    height:60px;
+  }
 }
-
-.inputBox{
-    position: relative;
-    box-sizing: border-box;
-    display: inline;
-}
-input,textarea{
-    background-color: rgba(10, 57, 122, 0.311);
-    border:0;
-    outline: 0;
-    padding:10px;
-    margin:5px;
-    box-sizing: border-box;
-    font-size: 18px;
-    border-radius: 15px;
-}
-textarea{
-    max-width:90%;
-    min-width: 90%;
-}
-.inputBox span{
-    position: absolute;
-    margin-top: 10px;
-    left:15px;
-    font-size: 18px;
-    transition: all ease-in 0.2s;
-    text-transform: uppercase;
-}
-.inputBox input:valid ~span,.inputBox input:focus ~span,.inputBox textarea:valid ~span,.inputBox textarea:focus ~span{
-    transform:translateX(10px) translateY(-15px);
-}
-.inputName,.inputEmail{
-    width:42%;
-}
-.linksToHandles{
-    margin-left: 40px;
-    display: flex;
-    flex-direction: column;
-}
-.individualLinks{
-    margin:5px;
-    cursor:pointer;
-    position:relative;
-    margin-top: 18px;
-}
-.individualLinks a p{
-    display: none;
-    position: absolute;
-    font-size: 20px;
-    top:20%;
-    right:100%;
-}
-.individualLinks a i{
-    color: orange;
-    font-size:30px;
-    padding:6px;
-    margin-left:5px;
-    background-color: rgb(211 211 211/41%);
-    border-radius: 40px;
-    width:30px;
-    height:30px;
-}
-
-.individualLinks a i:hover{
-    color:white;
-    background-color: orange;
-}
-.linksToHandles .individualLinks a:hover p{
-    width:fit-content;
-    display: block;
-}
-
-.footer{
-    position: absolute;
-    width:100%;
-    left:0;
-    bottom: 0;
-    height: 40px;
-    background-color: grey;
-    color:white;
-}
-@media only screen and (max-width:800px){
-    .linksToHandles{
-        flex-direction: row;
-        margin: 5px 0;
-        justify-content: space-around;
-    }
-    .individualLinks a p{
-        color:black;
-        top:-30%;
-        left:50%;
-        transform: translateX(-50%) translateY(-50%);
-    }
-    .contactFrame{
-        flex-direction: column-reverse;
-        width:90%;
-    }
-    .inputEmail,.inputName{
-        width:40%;
-    }
-    .footer{
-        height:60px;
-    }
-}
-#aboutme-link{
-    cursor:pointer;
+#aboutme-link {
+  cursor: pointer;
 }
 /* Contact Me Ends Here */
-
