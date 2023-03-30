@@ -1,13 +1,13 @@
-*{
-    margin:0;
-    padding: 0;
-}
 section{
     text-align: center;
     padding:10px 5vw;
+    margin:0;
     min-height:100vh;
 }
-
+#main{
+    position:relative;
+    top:3px
+}
 .contentHeading h2{
     margin:0;
 }
@@ -430,6 +430,9 @@ section h2{   /* This is one css for all heading of the section if problem add t
 /* Projects Ends here*/
 
 /* Contact Me Starts Here */
+.contact{
+    position: relative;
+}
 .contact h2{
     margin:0 auto;
     white-space:nowrap;
@@ -443,12 +446,119 @@ section h2{   /* This is one css for all heading of the section if problem add t
         width: 120px;
     }
 }
+.contactFrame{
+    width:600px;
+    margin: auto;
+    display:flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
 .inputBox{
     position: relative;
     box-sizing: border-box;
+    display: inline;
+}
+input,textarea{
+    background-color: rgba(10, 57, 122, 0.311);
+    border:0;
+    outline: 0;
+    padding:10px;
+    margin:5px;
+    box-sizing: border-box;
+    font-size: 18px;
+    border-radius: 15px;
+}
+textarea{
+    max-width:90%;
+    min-width: 90%;
 }
 .inputBox span{
     position: absolute;
+    margin-top: 10px;
+    left:15px;
+    font-size: 18px;
+    transition: all ease-in 0.2s;
+    text-transform: uppercase;
+}
+.inputBox input:valid ~span,.inputBox input:focus ~span,.inputBox textarea:valid ~span,.inputBox textarea:focus ~span{
+    transform:translateX(10px) translateY(-15px);
+}
+.inputName,.inputEmail{
+    width:42%;
+}
+.linksToHandles{
+    margin-left: 40px;
+    display: flex;
+    flex-direction: column;
+}
+.individualLinks{
+    margin:5px;
+    cursor:pointer;
+    position:relative;
+    margin-top: 18px;
+}
+.individualLinks a p{
+    display: none;
+    position: absolute;
+    font-size: 20px;
+    top:20%;
+    right:100%;
+}
+.individualLinks a i{
+    color: orange;
+    font-size:30px;
+    padding:6px;
+    margin-left:5px;
+    background-color: rgb(211 211 211/41%);
+    border-radius: 40px;
+    width:30px;
+    height:30px;
+}
+
+.individualLinks a i:hover{
+    color:white;
+    background-color: orange;
+}
+.linksToHandles .individualLinks a:hover p{
+    width:fit-content;
+    display: block;
+}
+
+.footer{
+    position: absolute;
+    width:100%;
     left:0;
+    bottom: 0;
+    height: 40px;
+    background-color: grey;
+    color:white;
+}
+@media only screen and (max-width:800px){
+    .linksToHandles{
+        flex-direction: row;
+        margin: 5px 0;
+        justify-content: space-around;
+    }
+    .individualLinks a p{
+        color:black;
+        top:-30%;
+        left:50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+    .contactFrame{
+        flex-direction: column-reverse;
+        width:90%;
+    }
+    .inputEmail,.inputName{
+        width:40%;
+    }
+    .footer{
+        height:60px;
+    }
+}
+#aboutme-link{
+    cursor:pointer;
 }
 /* Contact Me Ends Here */
+

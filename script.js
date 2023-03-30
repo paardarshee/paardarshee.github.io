@@ -36,12 +36,20 @@ function createBubble() {
 setInterval(createBubble, 150);
 //  Create Bubble Ends Here
 
-
-
 // Setting specific project  height for the image dimension
 const projectContainer = document.getElementsByClassName("projectContainer");
 for (let ele of projectContainer) {
-    ele.style.height = `${0.45 * +ele.offsetWidth}px`;
+  ele.style.height = `${0.45 * +ele.offsetWidth}px`;
 }
 
+// About Me Link At end of the page
 
+const aboutmeLink = document.querySelector('#aboutme-link');
+aboutmeLink.addEventListener('click', function(event) {
+  event.preventDefault()
+  const aboutmePosition = document.querySelector('#main').offsetTop;
+  document.querySelector('#main').scrollTo({
+    top: aboutmePosition,
+    behavior: 'smooth'
+  });
+});
