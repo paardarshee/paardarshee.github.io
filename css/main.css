@@ -9,11 +9,22 @@ section {
 #main {
   position: relative;
   scale:1.02;
+  top:3px;
+}
+.contentHeading span{
+  display: flex;
+  width:fit-content;
+  margin: auto;
+  color:var(--text-color);
 }
 .contentHeading h2 {
   margin: 0;
-  color:var(--text-color);
   white-space: nowrap;
+  text-transform: uppercase;
+}
+.contentHeading span i{
+  font-size: 25px;
+  padding:4px;
 }
 
 .parentContent {
@@ -151,7 +162,7 @@ section h2 {
 /* Introduction */
 .Introduction h2 {
   margin: 0 auto;
-  animation: lengthChangeIntroduction ease-in 10s alternate infinite;
+  animation: lengthChangeIntroduction ease-in 8s alternate infinite;
 }
 
 @keyframes lengthChangeIntroduction {
@@ -159,7 +170,7 @@ section h2 {
     width: 0;
   }
   from {
-    width: 110px;
+    width: 120px;
   }
 }
 .bioPic {
@@ -205,7 +216,7 @@ section h2 {
     width: 0;
   }
   from {
-    width: 110px;
+    width: 132px;
   }
 }
 
@@ -213,13 +224,13 @@ section h2 {
   margin: 3px 0;
 }
 
-.EducationData {
+.Education-conainer {
   width: 320px;
   margin: auto;
   margin-top: 30px;
 }
 
-.EducationData > div {
+.Education-conainer > div {
   display: flex;
 }
 
@@ -242,9 +253,11 @@ section h2 {
   box-sizing: border-box;
   width: 165px;
   width: calc(50% - 3px);
-  position: relative;
-  top: -15px;
   height: 140px;
+}
+.InstitutionDetails h3,.InstitutionDetails p,.InstitutionDetails span{
+  position: relative;
+  top:-10px;
 }
 .leftEducationBox {
   text-align: left;
@@ -264,7 +277,6 @@ section h2 {
 .InstitutionDetails p {
   font-size: 15px;
   cursor: pointer;
-  position: relative;
 }
 .InstitutionDetails p:hover a{
   font-weight: bold;
@@ -286,7 +298,7 @@ section h2 {
 }
 
 @media only screen and (min-width: 800px) {
-  .EducationData {
+  .Education-conainer {
     width: 600px;
     padding: 0 20px;
   }
@@ -311,7 +323,7 @@ section h2 {
   }
 }
 @media only screen and (min-width: 1400px) {
-  .EducationData {
+  .Education-conainer {
     width: 900px;
     padding: 0 40px;
   }
@@ -341,7 +353,7 @@ section h2 {
 /* Skills Section */
 .skills h2 {
   margin: 0 auto;
-  animation: lengthChangeSkills ease-in 10s alternate infinite;
+  animation: lengthChangeSkills ease-in 8s alternate infinite;
 }
 
 @keyframes lengthChangeSkills {
@@ -349,7 +361,7 @@ section h2 {
     width: 0;
   }
   from {
-    width: 60px;
+    width: 75px;
   }
 }
 .skillsHeading {
@@ -389,7 +401,7 @@ section h2 {
 /* Projects Starts here*/
 .project h2 {
   margin: 0 auto;
-  animation: lengthChangeProject ease-in 10s alternate infinite;
+  animation: lengthChangeProject ease-in 8s alternate infinite;
 }
 
 @keyframes lengthChangeProject {
@@ -397,7 +409,7 @@ section h2 {
     width: 0;
   }
   from {
-    width: 85px;
+    width: 115px;
   }
 }
 
@@ -471,7 +483,7 @@ section h2 {
 }
 .linksForButtons button:hover {
   bottom: 2px;
-  border:0;
+  border:3px solid transparent;
   background-color: orange;
   right: 0.5px;
   scale:1.01;
@@ -494,20 +506,22 @@ section h2 {
 .contact {
   position: relative;
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
   padding: 0;
+  height:90vh;
 }
 .contact h2 {
   margin: 0 auto;
   white-space: nowrap;
-  animation: lengthChangeContact ease-in 10s alternate infinite;
+  animation: lengthChangeContact ease-in 11s alternate infinite;
 }
 @keyframes lengthChangeContact {
   to {
     width: 0;
   }
   from {
-    width: 120px;
+    width: 150px;
   }
 }
 .contactFrame {
@@ -564,13 +578,13 @@ textarea {
   display: flex;
   flex-direction: column;
 }
-.individualLinks {
+.socialLink {
   margin: 5px;
   cursor: pointer;
   position: relative;
   margin-top: 18px;
 }
-.individualLinks a p {
+.socialLink a p {
   display: none;
   position: absolute;
   font-size: 20px;
@@ -578,7 +592,7 @@ textarea {
   right: 100%;
   color:rgb(160, 124, 56);
 }
-.individualLinks a i {
+.socialLink a i {
   color: orange;
   font-size: 30px;
   padding: 6px;
@@ -589,16 +603,16 @@ textarea {
   height: 30px;
 }
 
-.individualLinks a i:hover {
+.socialLink a i:hover {
   color: white;
   background-color: orange;
 }
-.linksToHandles .individualLinks a:hover p {
+.linksToHandles .socialLink a:hover p {
   width: fit-content;
   display: block;
 }
 
-.footer {
+.footer{
   align-items: flex-end;
   width: 100vw;
   left: 0;
@@ -616,7 +630,7 @@ textarea {
     margin: 5px 0;
     justify-content: space-around;
   }
-  .individualLinks a p {
+  .socialLink a p {
     top: -30%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
@@ -634,3 +648,33 @@ textarea {
   cursor: pointer;
 }
 /* Contact Me Ends Here */
+
+/* Scroll Reveal Section*/
+.contentHeading,.educationBox,.linksToHandles,.inputBox{
+  position: relative;
+  transform: translateY(200px);
+  opacity:0;
+  transition: all 0.8s ease;
+}
+.left{
+  opacity:0;
+  position: relative;
+  left:-100vw;
+  transition: all 0.8s ease;
+}
+.right{
+  opacity:0;
+  position: relative;
+  left:100vw;
+  transition: all 0.8s ease;
+}
+
+.reveal {
+  transform: translateY(0);
+  opacity:1;
+  left:0;
+  right:0;
+  top: 0;
+  transition: all 0.8s ease;
+}
+

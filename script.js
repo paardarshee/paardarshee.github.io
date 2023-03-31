@@ -8,6 +8,7 @@ sun.addEventListener("click", () => {
   setTimeout(() => {
     document.documentElement.style.setProperty("--up", "#00c4ff");
     document.documentElement.style.setProperty("--down", "#0512c7");
+    document.documentElement.style.setProperty("--text-color", "rgb(30,20,19)");
   }, 800);
 });
 moon.addEventListener("click", () => {
@@ -16,6 +17,7 @@ moon.addEventListener("click", () => {
   setTimeout(() => {
     document.documentElement.style.setProperty("--up", "#023d96");
     document.documentElement.style.setProperty("--down", "rgb(1, 0, 75)");
+    document.documentElement.style.setProperty("--text-color", "white");
   }, 800);
 });
 //  Create Bubble Starts Here
@@ -44,18 +46,80 @@ for (let ele of projectContainer) {
 
 // About Me Link At end of the page
 
-const aboutmeLink = document.querySelector('#aboutme-link');
-const upButton = document.querySelector('#upButton');
-const handleClickOnAboutMe = (event)=>{
-  event.preventDefault()
-  const aboutmePosition = document.querySelector('#main').offsetTop;
-  document.querySelector('#main').scrollTo({
+const aboutmeLink = document.querySelector("#aboutme-link");
+const upButton = document.querySelector("#upButton");
+const handleClickOnAboutMe = (event) => {
+  event.preventDefault();
+  const aboutmePosition = document.querySelector("#main").offsetTop;
+  document.querySelector("#main").scrollTo({
     top: aboutmePosition,
-    behavior: 'smooth'
+    behavior: "smooth",
   });
+};
+aboutmeLink.addEventListener("click", handleClickOnAboutMe);
+upButton.addEventListener("click", handleClickOnAboutMe);
+
+
+//Scroll Reveal
+const containerElement = document.querySelector(".container")
+const mainElement = document.querySelector("#main");
+const contentHeadings = document.querySelectorAll(".contentHeading")
+const leftBoxes = document.querySelectorAll(".left")
+const rightBoxes = document.querySelectorAll(".right")
+const institutions = document.querySelectorAll(".educationBox")
+const socialLinks = document.querySelectorAll(".linksToHandles")
+const inputBoxes = document.querySelectorAll(".inputBox")
+
+containerElement.addEventListener("scroll",()=>{
+  const bounding = mainElement.getBoundingClientRect();
+  const containerHeight = containerElement.offsetHeight;
+
+  if (bounding.top < containerHeight) {
+    contentHeadings[0].classList.add('reveal')
+    leftBoxes[0].classList.add('reveal')
+    rightBoxes[0].classList.add('reveal')
+  }
+  else{
+    contentHeadings[0].classList.remove('reveal')
+    leftBoxes[0].classList.remove('reveal')
+    rightBoxes[0].classList.remove('reveal')
+  }
+});
+
+async function scrollToReveal(items){
+  for(let i of items){
+    var mainHeight = mainElement.offsetHeight;
+    var revealTop = i.getBoundingClientRect().top
+    var revealPoint = 10
+    if(revealTop < mainHeight - revealPoint){
+      i.classList.add('reveal')
+    }
+    else{
+      i.classList.remove('reveal')
+    }
+  }
 }
-aboutmeLink.addEventListener('click', handleClickOnAboutMe);
-upButton.addEventListener('click',handleClickOnAboutMe)
+
+mainElement.addEventListener("scroll", () => {
+  scrollToReveal(contentHeadings)
+  scrollToReveal(institutions)
+  scrollToReveal(leftBoxes)
+  scrollToReveal(rightBoxes)
+  scrollToReveal(socialLinks)
+  scrollToReveal(inputBoxes)
+});
 
 
+// Setting Title 
 
+// document.addEventListener('visibilitychange',
+// function(){
+//     if(document.visibilityState === "visible"){
+//         document.title = "Portfolio | Saurav Mukherjee";
+//         $("#favicon").attr("href","assests/images/favicon.png");
+//     }
+//     else {
+//         document.title = "Come Back To Portfolio";
+        
+//     }
+// });

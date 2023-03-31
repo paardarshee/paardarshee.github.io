@@ -14,6 +14,7 @@
     ></script>
     <title>Document</title>
   </head>
+
   <body>
     <div class="container">
       <header id="head">
@@ -88,13 +89,13 @@
           <section class="Introduction">
             <div class="contentHeading">
               <img src="./assets/fishes/octopus.gif" alt="octopus GIF" />
-              <h2>About me</h2>
+              <span><h2>About me</h2><i class="fas fa-user"></i></span>
             </div>
             <div class="parentContent">
               <div class="left">
                 <img src="./assets/fishes/fish1.png" />
                 <div class="leftContent content bioPic">
-                  <img src="./assets/bioPic.JPG">
+                  <img src="./assets/bioPic.JPG" />
                 </div>
               </div>
               <div class="right">
@@ -118,13 +119,13 @@
             </div>
           </section>
           <section class="Education">
-            <div class="contentHeading">
+            <div class="contentHeading first">
               <img src="./assets/fishes/octopus.gif" alt="octopus GIF" />
-              <h2>Education</h2>
+              <span><h2>Education</h2><i class="fas fa-graduation-cap"></i></span>
             </div>
-            <div class="EducationData">
-              <div class="EducationBox1">
-                <div class="InstitutionDetails leftEducationBox">
+            <div class="Education-conainer">
+              <div class="EducationData">
+                <div class="InstitutionDetails leftEducationBox educationBox">
                   <h3>
                     B.Tech in Artificial Intelligence and Machine Learning
                   </h3>
@@ -140,13 +141,13 @@
                   <div class="line"></div>
                 </div>
               </div>
-              <div class="EducationBox2">
+              <div class="EducationData">
                 <div class="InstitutionDetails"></div>
                 <div>
                   <div class="circle"></div>
                   <div class="line"></div>
                 </div>
-                <div class="InstitutionDetails rightEducationBox">
+                <div class="InstitutionDetails rightEducationBox educationBox">
                   <h3>Senior Secondary School</h3>
                   <p>
                     <a href="https://asvmckd.com/" target="_blank"
@@ -156,8 +157,8 @@
                   <span><i class="fas fa-calendar-days"></i>2019-2021</span>
                 </div>
               </div>
-              <div class="EducationBox3">
-                <div class="InstitutionDetails leftEducationBox">
+              <div class="EducationData">
+                <div class="InstitutionDetails leftEducationBox educationBox">
                   <h3>Secondary School</h3>
                   <p>
                     <a href="https://asvmckd.com/" target="_blank"
@@ -171,12 +172,12 @@
                   <div class="line"></div>
                 </div>
               </div>
-              <div class="EducationBox4">
+              <div class="EducationData">
                 <div class="InstitutionDetails"></div>
                 <div>
                   <div class="circle"></div>
                 </div>
-                <div class="InstitutionDetails rightEducationBox">
+                <div class="InstitutionDetails rightEducationBox educationBox">
                   <h3>Primary School</h3>
                   <p>
                     <a
@@ -194,7 +195,7 @@
           <section class="skills">
             <div class="contentHeading">
               <img src="./assets/fishes/octopus.gif" alt="octopus GIF" />
-              <h2>Skills</h2>
+              <span><h2>Skills</h2><i class="fas fa-code"></i></span>
             </div>
             <div class="parentContent">
               <div class="left">
@@ -318,7 +319,7 @@
           <section class="project">
             <div class="contentHeading">
               <img src="./assets/fishes/octopus.gif" alt="octopus GIF" />
-              <h2>Projects</h2>
+              <span><h2>Projects</h2><i class="fas fa-tasks"></i></span>
             </div>
             <div class="parentContent">
               <div class="left">
@@ -326,15 +327,23 @@
                 <div class="leftContent content">
                   <div class="projectContainer Keep-It">
                     <div class="projectDetails">
-                      <h3>Text Goes Here</h3>
+                      <h3>Keep-It</h3>
                       <p>This is details about the project</p>
                       <div class="linksForButtons">
                         <button>
-                          <a href="https://google.com" target="_blank"
-                            >See It Live<i class="fas fa-paper-plane"></i></a
+                          <a
+                            href="https://thecodeventurer.github.io/keep-it/"
+                            target="_blank"
+                            ><i class="fas fa-paper-plane"></i>View</a
                           >
                         </button>
-                        <button><a href="">See The Code<i class="fas fa-paper-plane"></i></a></button>
+                        <button>
+                          <a
+                            href="https://github.com/TheCodeVenturer/keep-it"
+                            target="_blank"
+                            >Code<i class="fas fa-paper-plane"></i
+                          ></a>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -345,15 +354,21 @@
                 <div class="rightContent content">
                   <div class="projectContainer StackCalc">
                     <div class="projectDetails">
-                      <h3>Text Goes Here</h3>
+                      <h3>StackCalc</h3>
                       <p>This is details about the project</p>
                       <div class="linksForButtons">
                         <button>
-                          <a href="https://google.com" target="_blank"
-                            >See It Live<i class="fas fa-paper-plane"></i></a
+                          <a
+                            href="https://thecodeventurer.github.io/StackCalc/"
+                            target="_blank"
+                            ><i class="fas fa-paper-plane"></i>View</a
                           >
                         </button>
-                        <button><a href="">See The Code<i class="fas fa-paper-plane"></i></a></button>
+                        <button>
+                          <a href="https://github.com/TheCodeVenturer/StackCalc"
+                            >Code<i class="fas fa-paper-plane"></i
+                          ></a>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -369,12 +384,14 @@
                       <div class="linksForButtons">
                         <button>
                           <a href="https://google.com" target="_blank"
-                            >See It Live<i class="fas fa-paper-plane"></i></a
+                            ><i class="fas fa-paper-plane"></i>View</a
                           >
                         </button>
-                        <button><a href="https://google.com" target="_blank"
-                          >See The Code<i class="fas fa-paper-plane"></i></a
-                        ></button>
+                        <button>
+                          <a href="https://google.com" target="_blank"
+                            >Code<i class="fas fa-paper-plane"></i
+                          ></a>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -390,10 +407,12 @@
                       <div class="linksForButtons">
                         <button>
                           <a href="https://google.com" target="_blank"
-                            >See It Live<i class="fas fa-paper-plane"></i></a
+                            ><i class="fas fa-paper-plane"></i>View</a
                           >
                         </button>
-                        <button><a href="">See The Code<i class="fas fa-paper-plane"></i></a></button>
+                        <button>
+                          <a href="">Code<i class="fas fa-paper-plane"></i></a>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -404,33 +423,36 @@
           <section class="contact">
             <div class="contentHeading">
               <img src="./assets/fishes/octopus.gif" alt="octopus GIF" />
-              <h2>Contact me</h2>
+              <span><h2>Contact me</h2><i class="fas fa-headset"></i></span>
             </div>
             <div class="contactFrame">
               <div class="linksToHandles">
-                <div class="individualLinks">
-                  <a
-                    ><p>GitHub</p>
-                    <i class="fab fa-github"></i
-                  ></a>
+                <div class="socialLink">
+                  <a href="https://github.com/TheCodeVenturer" target="_blank">
+                    <p>GitHub</p>
+                    <i class="fab fa-github"></i>
+                  </a>
                 </div>
-                <div class="individualLinks">
-                  <a>
+                <div class="socialLink">
+                  <a href="https://twitter.com/TheCodeVenturer" target="_blank">
                     <p>twitter</p>
                     <i class="fab fa-twitter"></i>
                   </a>
                 </div>
-                <div class="individualLinks">
-                  <a
-                    ><p>Linkedin</p>
-                    <i class="fab fa-linkedin-in"></i
-                  ></a>
+                <div class="socialLink">
+                  <a href="linkedin.com/in/thecodeventurer" target="_blank">
+                    <p>Linkedin</p>
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
                 </div>
-                <div class="individualLinks">
+                <div class="socialLink">
                   <a
-                    ><p>Instagram</p>
-                    <i class="fab fa-instagram"></i
-                  ></a>
+                    href="https://www.instagram.com/thecodeventurer/"
+                    target="_blank"
+                  >
+                    <p>Instagram</p>
+                    <i class="fab fa-instagram"></i>
+                  </a>
                 </div>
               </div>
               <form class="contactForm">
@@ -444,7 +466,12 @@
                   <span>Name</span>
                 </div>
                 <div class="inputBox">
-                  <input type="text" name="email" class="inputEmail" required="required" />
+                  <input
+                    type="text"
+                    name="email"
+                    class="inputEmail"
+                    required="required"
+                  />
                   <span>Email</span>
                 </div>
                 <div class="inputBox">
@@ -470,7 +497,3 @@
     <script src="./script.js"></script>
   </body>
 </html>
-
-
-
-
