@@ -73,7 +73,6 @@ const inputBoxes = document.querySelectorAll(".inputBox")
 containerElement.addEventListener("scroll",()=>{
   const bounding = mainElement.getBoundingClientRect();
   const containerHeight = containerElement.offsetHeight;
-
   if (bounding.top < containerHeight) {
     contentHeadings[0].classList.add('reveal')
     leftBoxes[0].classList.add('reveal')
