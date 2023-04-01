@@ -637,15 +637,16 @@ textarea {
   .contactFrame {
     flex-direction: column-reverse;
     width: 90%;
+    height:fit-content;
   }
   .inputEmail,
   .inputName {
     width: 44%;
   }
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 1000px) {
   .footer{
-    height:130px;
+    height:120px;
   }
 }
 
