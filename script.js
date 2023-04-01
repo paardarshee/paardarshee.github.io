@@ -86,11 +86,13 @@ containerElement.addEventListener("scroll",()=>{
   }
 });
 
-async function scrollToReveal(items){
+function scrollToReveal(items,revealPoint){
   for(let i of items){
-    var mainHeight = mainElement.offsetHeight;
+    var mainHeight = window.innerHeight;
     var revealTop = i.getBoundingClientRect().top
-    var revealPoint = 10
+    if(i == institutions[0]){
+      console.log({revealTop,mainHeight,revealPoint})
+    }
     if(revealTop < mainHeight - revealPoint){
       i.classList.add('reveal')
     }
@@ -101,12 +103,12 @@ async function scrollToReveal(items){
 }
 
 mainElement.addEventListener("scroll", () => {
-  scrollToReveal(contentHeadings)
-  scrollToReveal(institutions)
-  scrollToReveal(leftBoxes)
-  scrollToReveal(rightBoxes)
-  scrollToReveal(socialLinks)
-  scrollToReveal(inputBoxes)
+  scrollToReveal(contentHeadings,100)
+  scrollToReveal(institutions,0)
+  scrollToReveal(leftBoxes,200)
+  scrollToReveal(rightBoxes,200)
+  scrollToReveal(socialLinks,50)
+  scrollToReveal(inputBoxes,0)
 });
 
 

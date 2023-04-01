@@ -38,6 +38,7 @@ header,#body{
     z-index: 100;
     right:8%;
     top:3%;
+    scale:1.5;
 }
 .sunMoon{
     width:70px;

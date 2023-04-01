@@ -505,11 +505,9 @@ section h2 {
 /* Contact Me Starts Here */
 .contact {
   position: relative;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
   padding: 0;
-  height:90vh;
+  display: flex;
+  flex-direction: column;
 }
 .contact h2 {
   margin: 0 auto;
@@ -540,7 +538,7 @@ section h2 {
 }
 input,
 textarea {
-  background-color: rgba(10, 57, 122, 0.311);
+  background-color: rgba(8, 63, 142, 0.338);
   border: 0;
   outline: 0;
   padding: 10px;
@@ -551,8 +549,9 @@ textarea {
   color:orange;
 }
 textarea {
-  max-width: 90%;
-  min-width: 90%;
+  min-width:90%;
+  max-width:91%;
+  max-height:50vh;
 }
 .inputBox span {
   position: absolute;
@@ -613,10 +612,10 @@ textarea {
 }
 
 .footer{
-  align-items: flex-end;
+  margin:auto auto 0 auto;
+  text-align: center;
+  padding:5px;
   width: 100vw;
-  left: 0;
-  bottom: 0;
   height: 60px;
   background-color: rgba(128, 128, 128, 0.603);
   color: white;
@@ -641,9 +640,15 @@ textarea {
   }
   .inputEmail,
   .inputName {
-    width: 40%;
+    width: 44%;
   }
 }
+@media only screen and (max-width: 400px) {
+  .footer{
+    height:130px;
+  }
+}
+
 #aboutme-link {
   cursor: pointer;
 }
@@ -652,7 +657,7 @@ textarea {
 /* Scroll Reveal Section*/
 .contentHeading,.educationBox,.linksToHandles,.inputBox{
   position: relative;
-  transform: translateY(200px);
+  transform: translateY(100px);
   opacity:0;
   transition: all 0.8s ease;
 }
