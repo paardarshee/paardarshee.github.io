@@ -89,9 +89,6 @@ function scrollToReveal(items,revealPoint){
   for(let i of items){
     var mainHeight = window.innerHeight;
     var revealTop = i.getBoundingClientRect().top
-    if(i == institutions[0]){
-      console.log({revealTop,mainHeight,revealPoint})
-    }
     if(revealTop < mainHeight - revealPoint){
       i.classList.add('reveal')
     }
@@ -109,6 +106,7 @@ mainElement.addEventListener("scroll", () => {
   scrollToReveal(socialLinks,50)
   scrollToReveal(inputBoxes,0)
 });
+
 
 
 // Setting Title 

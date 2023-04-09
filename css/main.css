@@ -623,6 +623,34 @@ textarea {
 .footer p{
   padding:3px;
 }
+
+.submitForm{
+  background-color: transparent;
+  text-align: right;
+}
+.submitForm button{
+  outline: 0;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: rgba(0, 72, 255, 0.156);
+  font-size: 16px;
+  font-weight: 600;
+  position: relative;
+  cursor:pointer;
+  color:orange;
+  right:5%;
+}
+.submitForm button:hover{
+  color:var(--text-color);
+  bottom: 2px;
+  background-color: orange;
+  right: calc(5% + 0.5px);
+  scale:1.01;
+  box-shadow: 3px 2.5px rgb(105, 68, 0);
+}
+.submitForm i{
+  padding:3px;
+}
 @media only screen and (max-width: 800px) {
   .linksToHandles {
     flex-direction: row;
