@@ -9,6 +9,10 @@ sun.addEventListener("click", () => {
     document.documentElement.style.setProperty("--up", "#00c4ff");
     document.documentElement.style.setProperty("--down", "#0512c7");
     document.documentElement.style.setProperty("--text-color", "rgb(30,20,19)");
+    document.documentElement.style.setProperty(
+      "--secondary-text-color",
+      "rgb(44,44,44)"
+    );
   }, 800);
 });
 moon.addEventListener("click", () => {
@@ -18,6 +22,10 @@ moon.addEventListener("click", () => {
     document.documentElement.style.setProperty("--up", "#023d96");
     document.documentElement.style.setProperty("--down", "rgb(1, 0, 75)");
     document.documentElement.style.setProperty("--text-color", "white");
+    document.documentElement.style.setProperty(
+      "--secondary-text-color",
+      "rgb(144, 144, 144)"
+    );
   }, 800);
 });
 //  Create Bubble Starts Here
@@ -59,66 +67,117 @@ const handleClickOnAboutMe = (event) => {
 aboutmeLink.addEventListener("click", handleClickOnAboutMe);
 upButton.addEventListener("click", handleClickOnAboutMe);
 
-
 //Scroll Reveal
-const containerElement = document.querySelector(".container")
+const containerElement = document.querySelector(".container");
 const mainElement = document.querySelector("#main");
-const contentHeadings = document.querySelectorAll(".contentHeading")
-const leftBoxes = document.querySelectorAll(".left")
-const rightBoxes = document.querySelectorAll(".right")
-const institutions = document.querySelectorAll(".educationBox")
-const socialLinks = document.querySelectorAll(".linksToHandles")
-const inputBoxes = document.querySelectorAll(".inputBox")
+const contentHeadings = document.querySelectorAll(".contentHeading");
+const leftBoxes = document.querySelectorAll(".left");
+const rightBoxes = document.querySelectorAll(".right");
+const institutions = document.querySelectorAll(".educationBox");
+const socialLinks = document.querySelectorAll(".linksToHandles");
+const inputBoxes = document.querySelectorAll(".inputBox");
 
-containerElement.addEventListener("scroll",()=>{
+containerElement.addEventListener("scroll", () => {
   const bounding = mainElement.getBoundingClientRect();
   const containerHeight = containerElement.offsetHeight;
   if (bounding.top < containerHeight) {
-    contentHeadings[0].classList.add('reveal')
-    leftBoxes[0].classList.add('reveal')
-    rightBoxes[0].classList.add('reveal')
-  }
-  else{
-    contentHeadings[0].classList.remove('reveal')
-    leftBoxes[0].classList.remove('reveal')
-    rightBoxes[0].classList.remove('reveal')
+    contentHeadings[0].classList.add("reveal");
+    leftBoxes[0].classList.add("reveal");
+    rightBoxes[0].classList.add("reveal");
+  } else {
+    contentHeadings[0].classList.remove("reveal");
+    leftBoxes[0].classList.remove("reveal");
+    rightBoxes[0].classList.remove("reveal");
   }
 });
 
-function scrollToReveal(items,revealPoint){
-  for(let i of items){
+function scrollToReveal(items, revealPoint) {
+  for (let i of items) {
     var mainHeight = window.innerHeight;
-    var revealTop = i.getBoundingClientRect().top
-    if(revealTop < mainHeight - revealPoint){
-      i.classList.add('reveal')
-    }
-    else{
-      i.classList.remove('reveal')
+    var revealTop = i.getBoundingClientRect().top;
+    if (revealTop < mainHeight - revealPoint) {
+      i.classList.add("reveal");
+    } else {
+      i.classList.remove("reveal");
     }
   }
 }
 
 mainElement.addEventListener("scroll", () => {
-  scrollToReveal(contentHeadings,100)
-  scrollToReveal(institutions,0)
-  scrollToReveal(leftBoxes,200)
-  scrollToReveal(rightBoxes,200)
-  scrollToReveal(socialLinks,50)
-  scrollToReveal(inputBoxes,0)
+  scrollToReveal(contentHeadings, 100);
+  scrollToReveal(institutions, 0);
+  scrollToReveal(leftBoxes, 200);
+  scrollToReveal(rightBoxes, 200);
+  scrollToReveal(socialLinks, 50);
+  scrollToReveal(inputBoxes, 0);
 });
 
+// TypeWriter Effect
+function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
 
+async function typeWriter(strings, object, key) {
+  let stringIndex = 0;
+  let charIndex = 0;
+  let isForward = true; // Flag to indicate the direction of printing
+  let originalTitle = object[key];
 
-// Setting Title 
+  async function cursorBlinking(currString) {
+    let round = 2;
+    while (round--) {
+      currString = currString.substring(0, currString.length - 1);
+      object[key] = currString;
+      await delay(400);
+      currString += "|";
+      object[key] = currString;
+      await delay(400);
+    }
+  }
+  while (true) {
+    const currentString = strings[stringIndex];
 
-// document.addEventListener('visibilitychange',
-// function(){
-//     if(document.visibilityState === "visible"){
-//         document.title = "Portfolio | Saurav Mukherjee";
-//         $("#favicon").attr("href","assests/images/favicon.png");
-//     }
-//     else {
-//         document.title = "Come Back To Portfolio";
-        
-//     }
-// });
+    if (charIndex >= 0 && charIndex < currentString.length && isForward) {
+      object[key] = currentString.substring(0, charIndex + 1) + "|";
+      charIndex++;
+      await delay(300); // Delay between characters while writing
+    } else if (charIndex >= 0 && !isForward) {
+      if (charIndex) {
+        object[key] = currentString.substring(0, charIndex) + "|";
+        await delay(250); // Delay between characters while deleting
+      } else {
+        await cursorBlinking(originalTitle + "|");
+      }
+      charIndex--;
+    } else {
+      if (isForward) {
+        isForward = false;
+        charIndex--;
+        let currValue = object[key];
+        await cursorBlinking(currValue);
+      } else {
+        isForward = true;
+        stringIndex = (stringIndex + 1) % strings.length;
+        charIndex++;
+      }
+    }
+  }
+}
+
+// TypeWriter Effect Ends Here
+
+// Setting Dynamic Title
+
+const titles = ["Niraj Modi", "TheCodeVenturer"];
+typeWriter(titles, document, "title");
+
+// Setting Dynamic Title Ends Here
+
+//Setting Position / Title
+
+const position = [
+  "a FullStack Developer",
+  "a Community Lead",
+  "TheCodeVenturer",
+];
+typeWriter(position, document.querySelector("#myTitle"), "innerHTML");

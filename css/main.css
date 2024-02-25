@@ -1,30 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Poppins&family=Roboto+Slab&family=Ubuntu&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Poppins&family=Roboto+Slab&family=Ubuntu&display=swap");
 section {
   text-align: center;
   padding: 10px 5vw;
   margin: 0;
   min-height: 100vh;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
 }
 #main {
   position: relative;
-  scale:1.02;
-  top:3px;
+  scale: 1.02;
+  top: 3px;
 }
-.contentHeading span{
+.contentHeading span {
   display: flex;
-  width:fit-content;
+  width: fit-content;
   margin: auto;
-  color:var(--text-color);
+  color: var(--text-color);
 }
 .contentHeading h2 {
   margin: 0;
   white-space: nowrap;
   text-transform: uppercase;
 }
-.contentHeading span i{
+.contentHeading span i {
   font-size: 25px;
-  padding:4px;
+  padding: 4px;
 }
 
 .parentContent {
@@ -158,7 +158,6 @@ section h2 {
   text-align: left;
 }
 
-
 /* Introduction */
 .Introduction h2 {
   margin: 0 auto;
@@ -174,30 +173,58 @@ section h2 {
   }
 }
 .bioPic {
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0
-  );
-  scale:0.8; /* background for low opacity transparency*/
+  background-color: rgba(255, 255, 255, 0);
+  scale: 0.8; /* background for low opacity transparency*/
+  padding: 30px;
+  background: linear-gradient(to top, var(--down), var(--up));
+  border-radius: 0 0 5px 10px;
 }
 .Introduction .leftContent img {
+  box-sizing: border-box;
   width: 100%;
-  border-radius: 0 0 5px 10px;
+  border-radius: 100%;
   filter: invert(10%) grayscale(50%) brightness(80%);
+  opacity: 1;
 }
 .Introduction .leftContent img:hover {
   filter: none;
 }
-.Introduction .rightContent{
-  color:#e3d8b6;
-  font-family: 'Poppins', sans-serif;
+.Introduction .rightContent {
+  color: #e3d8b6;
+  font-family: "Poppins", sans-serif;
   letter-spacing: 1px;
   font-size: 18px;
   line-height: 25px;
   text-align: left;
   padding-left: 10px;
+}
+
+.Introduction .rightContent .downloadResume {
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  a {
+    text-decoration: none;
+    cursor: pointer;
+    button {
+      display: block;
+      background-color: transparent;
+      gap: 10px;
+      border: 2px solid orange;
+      padding: 5px 10px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      color: orange;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .Introduction .rightContent {
+    line-height: 20px;
+  }
 }
 
 /* Education */
@@ -220,7 +247,7 @@ section h2 {
   }
 }
 
-.Education p{
+.Education p {
   margin: 3px 0;
 }
 
@@ -255,9 +282,11 @@ section h2 {
   width: calc(50% - 3px);
   height: 140px;
 }
-.InstitutionDetails h3,.InstitutionDetails p,.InstitutionDetails span{
+.InstitutionDetails h3,
+.InstitutionDetails p,
+.InstitutionDetails span {
   position: relative;
-  top:-10px;
+  top: -10px;
 }
 .leftEducationBox {
   text-align: left;
@@ -270,7 +299,7 @@ section h2 {
 
 .InstitutionDetails h3 {
   margin: 3px 0;
-  color:orange;
+  color: orange;
   font-size: 18px;
 }
 
@@ -278,23 +307,23 @@ section h2 {
   font-size: 15px;
   cursor: pointer;
 }
-.InstitutionDetails p:hover a{
+.InstitutionDetails p:hover a {
   font-weight: bold;
-  color:rgb(182, 140, 61);
+  color: rgb(182, 140, 61);
   scale: 1.02;
 }
 .InstitutionDetails p a {
-  color:rgb(121, 93, 42);
+  color: rgb(121, 93, 42);
   text-decoration: none;
 }
 
 .InstitutionDetails span {
   font-size: 12px;
-  color:rgb(121, 93, 42);
+  color: rgb(121, 93, 42);
 }
-.InstitutionDetails span i{
-  margin-right:5px;
-  color:rgb(254, 196, 88);
+.InstitutionDetails span i {
+  margin-right: 5px;
+  color: rgb(254, 196, 88);
 }
 
 @media only screen and (min-width: 800px) {
@@ -370,16 +399,16 @@ section h2 {
   font-size: 21px;
   padding: 3px;
   font-weight: 700;
-  color:orange;
+  color: orange;
 }
 .skillsHeading li {
   list-style: none;
   font-size: 16px;
   letter-spacing: 1.5px;
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   padding: 2px 35px;
   text-align: left;
-  color:#ffe6b0;
+  color: #ffe6b0;
 }
 
 .skillsHeading li img {
@@ -422,13 +451,13 @@ section h2 {
   position: relative;
   overflow: hidden;
   border-radius: 0 0 5px 5px;
-  padding:10px;
+  padding: 10px;
   margin: auto;
 }
-.Keep-It{
+.Keep-It {
   background-image: url("../assets/Keep\ It.gif");
 }
-.StackCalc{
+.StackCalc {
   background-image: url("../assets/StackCalc.gif");
 }
 .projectDetails {
@@ -448,19 +477,19 @@ section h2 {
   width: fit-content;
   margin-left: 0;
 }
-.projectDetails p{
+.projectDetails p {
   text-align: left;
   margin-left: 5px;
   font-size: 20px;
   font-weight: 800;
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   color: var(--up);
 }
 .projectContainer:hover .projectDetails {
   bottom: 10px;
   background-color: rgba(203, 170, 108, 0.313);
   border-radius: 9px;
-  padding:10px;
+  padding: 10px;
 }
 
 .linksForButtons {
@@ -479,25 +508,25 @@ section h2 {
   font-size: 16px;
   font-weight: 600;
   position: relative;
-  cursor:pointer;
+  cursor: pointer;
 }
 .linksForButtons button:hover {
   bottom: 2px;
-  border:3px solid transparent;
+  border: 3px solid transparent;
   background-color: orange;
   right: 0.5px;
-  scale:1.01;
+  scale: 1.01;
   box-shadow: 3px 2.5px rgb(105, 68, 0);
 }
 .linksForButtons a {
   text-decoration: none;
   color: orange;
 }
-.linksForButtons button a i{
-  padding:4px;
+.linksForButtons button a i {
+  padding: 4px;
 }
-.linksForButtons button:hover a{
-  color:white;
+.linksForButtons button:hover a {
+  color: white;
 }
 
 /* Projects Ends here*/
@@ -534,7 +563,7 @@ section h2 {
   position: relative;
   box-sizing: border-box;
   display: inline;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
 }
 input,
 textarea {
@@ -546,12 +575,12 @@ textarea {
   box-sizing: border-box;
   font-size: 18px;
   border-radius: 15px;
-  color:orange;
+  color: orange;
 }
 textarea {
-  min-width:90%;
-  max-width:91%;
-  max-height:50vh;
+  min-width: 90%;
+  max-width: 91%;
+  max-height: 50vh;
 }
 .inputBox span {
   position: absolute;
@@ -560,7 +589,7 @@ textarea {
   font-size: 18px;
   transition: all ease-in 0.2s;
   text-transform: uppercase;
-  color:rgb(253, 181, 46);
+  color: rgb(253, 181, 46);
 }
 .inputBox input:valid ~ span,
 .inputBox input:focus ~ span,
@@ -589,7 +618,7 @@ textarea {
   font-size: 20px;
   top: 20%;
   right: 100%;
-  color:rgb(160, 124, 56);
+  color: rgb(160, 124, 56);
 }
 .socialLink a i {
   color: orange;
@@ -611,24 +640,24 @@ textarea {
   display: block;
 }
 
-.footer{
-  margin:auto auto 0 auto;
+.footer {
+  margin: auto auto 0 auto;
   text-align: center;
-  padding:5px;
+  padding: 5px;
   width: 100vw;
   height: 60px;
   background-color: rgba(128, 128, 128, 0.603);
   color: white;
 }
-.footer p{
-  padding:3px;
+.footer p {
+  padding: 3px;
 }
 
-.submitForm{
+.submitForm {
   background-color: transparent;
   text-align: right;
 }
-.submitForm button{
+.submitForm button {
   outline: 0;
   padding: 5px;
   border-radius: 10px;
@@ -636,20 +665,20 @@ textarea {
   font-size: 16px;
   font-weight: 600;
   position: relative;
-  cursor:pointer;
-  color:orange;
-  right:5%;
+  cursor: pointer;
+  color: orange;
+  right: 5%;
 }
-.submitForm button:hover{
-  color:var(--text-color);
+.submitForm button:hover {
+  color: var(--text-color);
   bottom: 2px;
   background-color: orange;
   right: calc(5% + 0.5px);
-  scale:1.01;
+  scale: 1.01;
   box-shadow: 3px 2.5px rgb(105, 68, 0);
 }
-.submitForm i{
-  padding:3px;
+.submitForm i {
+  padding: 3px;
 }
 @media only screen and (max-width: 800px) {
   .linksToHandles {
@@ -665,7 +694,7 @@ textarea {
   .contactFrame {
     flex-direction: column-reverse;
     width: 90%;
-    height:fit-content;
+    height: fit-content;
   }
   .inputEmail,
   .inputName {
@@ -673,8 +702,8 @@ textarea {
   }
 }
 @media only screen and (max-width: 1000px) {
-  .footer{
-    height:120px;
+  .footer {
+    height: 120px;
   }
 }
 
@@ -684,31 +713,33 @@ textarea {
 /* Contact Me Ends Here */
 
 /* Scroll Reveal Section*/
-.contentHeading,.educationBox,.linksToHandles,.inputBox{
+.contentHeading,
+.educationBox,
+.linksToHandles,
+.inputBox {
   position: relative;
   transform: translateY(100px);
-  opacity:0;
+  opacity: 0;
   transition: all 0.8s ease;
 }
-.left{
-  opacity:0;
+.left {
+  opacity: 0;
   position: relative;
-  left:-100vw;
+  left: -100vw;
   transition: all 0.8s ease;
 }
-.right{
-  opacity:0;
+.right {
+  opacity: 0;
   position: relative;
-  left:100vw;
+  left: 100vw;
   transition: all 0.8s ease;
 }
 
 .reveal {
   transform: translateY(0);
-  opacity:1;
-  left:0;
-  right:0;
+  opacity: 1;
+  left: 0;
+  right: 0;
   top: 0;
   transition: all 0.8s ease;
 }
-

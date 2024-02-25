@@ -1,121 +1,248 @@
-@import url('https://fonts.googleapis.com/css2?family=Sevillana&display=swap');
-
-:root{
-    --up:#023d96;
-    --down: rgb(1, 0, 75);
-    --text-color : white;
+:root {
+  --up: #023d96;
+  --down: rgb(1, 0, 75);
+  --text-color: white;
+  --secondary-text-color: rgb(144, 144, 144);
 }
-*{
-    margin:0;
-    border: 0;
-    padding: 0;
-    scroll-behavior: smooth;
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  scroll-behavior: smooth;
 }
-::-webkit-scrollbar{
-    width:0;
+::-webkit-scrollbar {
+  width: 0;
 }
-.container{
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
-    height: 100vh;
+.container {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
 }
-#head{
-    position: relative;
-    z-index: 1;
+#head {
+  position: relative;
+  z-index: 1;
 }
-header,#body{
-    scroll-behavior: smooth;
-    scroll-snap-align: start;
-    position: relative;
+header,
+#body {
+  scroll-behavior: smooth;
+  scroll-snap-align: start;
+  position: relative;
 }
 /* Day Night Mode Change Starts Here */
-.switchDayToNight{
-    width:35px;
-    height:35px;
-    border-radius: 50%;
-    overflow:hidden;
-    position: fixed;
-    z-index: 100;
-    right:8%;
-    top:3%;
-    scale:1.5;
+.home {
+  position: relative;
 }
-.sunMoon{
-    width:70px;
-    height: 70px;
-    padding:6px;
-    background-color: rgba(85, 85, 85, 0.158);
-    position:absolute;
-    left:-23px;
-    top:-0.6px;
-    animation: rotate90 ease-in 1s;
-    animation-fill-mode: forwards;
+.switchDayToNight {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: fixed;
+  z-index: 100;
+  right: 8%;
+  top: 3%;
+  scale: 1.5;
+}
+.sunMoon {
+  width: 70px;
+  height: 70px;
+  padding: 6px;
+  background-color: rgba(85, 85, 85, 0.158);
+  position: absolute;
+  left: -23px;
+  top: -0.6px;
+  animation: rotate90 ease-in 1s;
+  animation-fill-mode: forwards;
 }
 
 @keyframes rotate90 {
-    0%{
-        transform: rotate(0deg);
-    }
-    100%{
-        transform: rotate(90deg);
-    }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
 }
 @keyframes rotate-90 {
-    0%{
-        transform: rotate(90deg);
-    }
-    100%{
-        transform: rotate(0deg);
-    }
+  0% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
-.sunMoon i{
-    cursor: pointer;
-    font-size: 25px;
+.sunMoon i {
+  cursor: pointer;
+  font-size: 25px;
 }
-.sunMoon i:hover{
-    rotate:10deg;
+.sunMoon i:hover {
+  rotate: 10deg;
 }
-.fa-sun{
-    position: absolute;
-    top:29px;
-    rotate:-90deg;
-    background: linear-gradient(to top,#FF4E00,#EC9F05);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
+.fa-sun {
+  position: absolute;
+  top: 29px;
+  rotate: -90deg;
+  background: linear-gradient(to top, #ff4e00, #ec9f05);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }
-.fa-moon{
-    position: absolute;
-    right:32px;
-    background: linear-gradient(to top,#c4d8e0,#c9c0bb,#FFFFFF);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
+.fa-moon {
+  position: absolute;
+  right: 32px;
+  background: linear-gradient(to top, #c4d8e0, #c9c0bb, #ffffff);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }
 
 /* Day Night Mode Change Ends Here */
 
 /* Bubble Making Ends here */
-main{
-    overflow: scroll;
-    position: absolute;
-    width:100%;
-    height:102vh;
+main {
+  overflow: scroll;
+  position: absolute;
+  width: 100%;
+  height: 102vh;
 }
-#upButton{
-    position: fixed;
-    bottom:7%;
-    right:2%;
-    color: orange;
-    font-size: 25px;
-    padding: 6px;
-    margin-left: 5px;
-    border-radius: 40px;
-    border:3px solid orange;
-    width: 25px;
-    height: 25px;
-    cursor:pointer;
+#upButton {
+  position: fixed;
+  bottom: 7%;
+  right: 2%;
+  color: orange;
+  font-size: 25px;
+  padding: 6px;
+  margin-left: 5px;
+  border-radius: 40px;
+  border: 3px solid orange;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
 }
-#upButton:hover{
-    color: white;
-    background-color: orange;
+#upButton:hover {
+  color: white;
+  background-color: orange;
 }
 
+/* Landing Page  */
+.landingPage {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .aboutMeContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 100px;
+    align-items: center;
+    justify-content: center;
+    height: 85vh;
+    .avatar {
+      img {
+        object-fit: cover;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        border: 5px solid var(--text-color);
+        box-shadow: 0 0 10px 5px var(--text-color);
+        transition: all 0.3s ease-in-out;
+      }
+    }
+    .shortInfo {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      text-align: center;
+      h1 {
+        font-size: 4rem;
+        /* Roboto Font*/
+        font-family: "Roboto", sans-serif;
+        color: var(--text-color);
+        margin-bottom: 10px;
+      }
+      .titleContainer {
+        font-size: 1.8rem;
+        color: var(--secondary-text-color);
+        margin-bottom: 10px;
+        font-weight: 400;
+
+        span {
+          font-weight: 700;
+        }
+      }
+      .personalTagline {
+        text-align: left;
+        font-size: 1.3rem;
+        color: var(--text-color);
+        margin-bottom: 10px;
+        width: 300px;
+      }
+      .contactMeHref {
+        margin-top: 20px;
+        display: flex;
+
+        background: var(--secondary-text-color);
+        padding: 5px 10px;
+        border-radius: 5px;
+        a {
+          position: relative;
+          text-decoration: none;
+          color: white;
+          font-size: 1.5rem;
+          transition: all 0.3s ease-in-out;
+          i {
+            color: var(--secondary-text-color);
+            position: absolute;
+            padding: 0 5px;
+            transition: all 0.3s ease-in-out;
+            transform: rotate(55deg) translate(-17px, -10px);
+            opacity: 0;
+          }
+          &:hover i {
+            transform: rotate(15deg) scale(1.2) translate(-12px, -20px);
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  #diveDown img {
+    height: 70px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      transform: scale(1.05) translateY(5px);
+    }
+  }
+}
+@media (max-width: 768px) {
+  .landingPage {
+    .aboutMeContainer {
+      flex-direction: column;
+      gap: 40px;
+      .avatar {
+        img {
+          width: 200px;
+          height: 200px;
+        }
+      }
+      .shortInfo {
+        h1 {
+          font-size: 2.8rem;
+        }
+        .titleContainer {
+          font-size: 1.3rem;
+        }
+        .personalTagline {
+          width: 220px;
+          font-size: 1.1rem;
+        }
+        .contactMeHref {
+          align-self: center;
+        }
+      }
+    }
+  }
+}
