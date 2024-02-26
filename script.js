@@ -121,7 +121,7 @@ async function typeWriter(strings, object, key) {
   let stringIndex = 0;
   let charIndex = 0;
   let isForward = true; // Flag to indicate the direction of printing
-  let originalTitle = object[key];
+  const originalTitle = object[key][object[key].length - 1];
 
   async function cursorBlinking(currString) {
     let round = 2;

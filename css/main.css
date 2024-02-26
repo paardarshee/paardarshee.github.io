@@ -451,18 +451,17 @@ section h2 {
   position: relative;
   overflow: hidden;
   border-radius: 0 0 5px 5px;
-  padding: 10px;
   margin: auto;
-}
-.Keep-It {
-  background-image: url("../assets/Keep\ It.gif");
-}
-.StackCalc {
-  background-image: url("../assets/StackCalc.gif");
+  video {
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+  }
 }
 .projectDetails {
+  margin: 10px;
   position: absolute;
-  bottom: calc(-100% + 65px);
+  bottom: calc(-100% + 55px);
   box-sizing: border-box;
   width: calc(100% - 20px);
   height: calc(100% - 20px);
@@ -480,13 +479,13 @@ section h2 {
 .projectDetails p {
   text-align: left;
   margin-left: 5px;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 800;
   font-family: "Roboto Slab", serif;
-  color: var(--up);
+  color: blue;
 }
 .projectContainer:hover .projectDetails {
-  bottom: 10px;
+  bottom: 0px;
   background-color: rgba(203, 170, 108, 0.313);
   border-radius: 9px;
   padding: 10px;
