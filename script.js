@@ -168,7 +168,7 @@ async function typeWriter(strings, object, key) {
 
 // Setting Dynamic Title
 
-const titles = ["Niraj Modi", "TheCodeVenturer"];
+const titles = ["Niraj Modi", "Paardarshee"];
 typeWriter(titles, document, "title");
 
 // Setting Dynamic Title Ends Here
@@ -178,6 +178,6 @@ typeWriter(titles, document, "title");
 const position = [
 	"a FullStack Developer",
 	"a Community Lead",
-	"TheCodeVenturer",
+	"Paardarshee",
 ];
 typeWriter(position, document.querySelector("#myTitle"), "innerText");
