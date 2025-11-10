@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Niraj Modi — Projects</title>
+		<meta
+			name="description"
+			content="Portfolio of projects by Niraj Modi — Full-stack, backend, APIs, offline apps."
+		/>
+		<link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+		<style>
+			:root {
+				--bg: #0f1724;
+				--card: #0b1220;
+				--muted: #9aa6bd;
+				--accent: #6ee7b7;
+				--glass: rgba(255, 255, 255, 0.04);
+				--max-w: 1100px;
+				font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+					Roboto, "Helvetica Neue", Arial;
+			}
+			* {
+				box-sizing: border-box;
+			}
+			html,
+			body {
+				height: 100%;
+				margin: 0;
+				background: linear-gradient(180deg, #071025 0%, #071521 60%);
+				color: #e6eef8;
+			}
+			.wrap {
+				max-width: var(--max-w);
+				margin: 36px auto;
+				padding: 28px;
+			}
+			header {
+				display: flex;
+				gap: 20px;
+				align-items: center;
+				margin-bottom: 22px;
+			}
+			.avatar {
+				width: 64px;
+				height: 64px;
+				border-radius: 12px;
+				background: linear-gradient(135deg, var(--accent), #60a5fa);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: #042;
+				font-weight: 700;
+			}
+			h1 {
+				margin: 0;
+				font-size: 20px;
+			}
+			p.lead {
+				margin: 6px 0 0;
+				color: var(--muted);
+				font-size: 13px;
+			}
+
+			.grid {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				gap: 18px;
+				margin-top: 22px;
+			}
+			@media (max-width: 800px) {
+				.grid {
+					grid-template-columns: 1fr;
+				}
+			}
+
+			.card {
+				background: linear-gradient(
+					180deg,
+					var(--card),
+					rgba(255, 255, 255, 0.02)
+				);
+				border-radius: 12px;
+				padding: 18px;
+				border: 1px solid rgba(255, 255, 255, 0.03);
+				box-shadow: 0 6px 18px rgba(2, 6, 23, 0.6);
+			}
+			.card h3 {
+				margin: 0 0 8px;
+			}
+			.meta {
+				display: flex;
+				gap: 8px;
+				align-items: center;
+				color: var(--muted);
+				font-size: 13px;
+				margin-bottom: 12px;
+			}
+			.tags {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 8px;
+			}
+			.tag {
+				background: var(--glass);
+				padding: 6px 8px;
+				border-radius: 8px;
+				font-size: 12px;
+				color: var(--muted);
+			}
+			.desc {
+				color: #cfe6ff;
+				font-size: 14px;
+				line-height: 1.45;
+				margin-bottom: 12px;
+			}
+			.actions {
+				display: flex;
+				gap: 10px;
+			}
+			.btn {
+				display: inline-block;
+				padding: 8px 12px;
+				border-radius: 10px;
+				background: transparent;
+				border: 1px solid rgba(255, 255, 255, 0.06);
+				color: var(--accent);
+				font-weight: 600;
+				text-decoration: none;
+				font-size: 13px;
+			}
+			.btn.secondary {
+				color: var(--muted);
+				border-style: dashed;
+			}
+
+			.note {
+				margin-top: 16px;
+				color: var(--muted);
+				font-size: 13px;
+			}
+			footer {
+				margin-top: 28px;
+				color: var(--muted);
+				font-size: 13px;
+				text-align: center;
+			}
+
+			/* project header row */
+			.row {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				gap: 12px;
+			}
+			.highlight {
+				color: var(--accent);
+				font-weight: 700;
+			}
+
+			/* small preview */
+			.preview {
+				height: 120px;
+				background: linear-gradient(
+					90deg,
+					rgba(255, 255, 255, 0.02),
+					rgba(255, 255, 255, 0.01)
+				);
+				border-radius: 8px;
+				margin-bottom: 12px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: var(--muted);
+				font-size: 13px;
+			}
+
+			/* search + filter */
+			.controls {
+				display: flex;
+				gap: 12px;
+				align-items: center;
+				margin-bottom: 18px;
+			}
+			.search {
+				flex: 1;
+			}
+			input[type="search"] {
+				width: 100%;
+				padding: 10px 12px;
+				border-radius: 10px;
+				border: 1px solid rgba(255, 255, 255, 0.04);
+				background: transparent;
+				color: inherit;
+			}
+			select {
+				padding: 10px;
+				border-radius: 10px;
+				border: 1px solid rgba(255, 255, 255, 0.04);
+				background: transparent;
+				color: inherit;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<header>
+				<div class="avatar">NM</div>
+				<div>
+					<h1>Niraj Modi — Projects</h1>
+					<p class="lead">
+						A curated list of select projects (backend & full-stack)
+						demonstrating APIs and Engineering. Links to source, demos and docs
+						included.
+					</p>
+				</div>
+			</header>
+
+			<div class="controls">
+				<div class="search">
+					<input
+						id="q"
+						type="search"
+						placeholder="Search projects or tech (e.g., Node.js, PostgreSQL)"
+					/>
+				</div>
+				<div>
+					<select id="filter">
+						<option value="all">All</option>
+						<option value="backend">Backend</option>
+						<option value="fullstack">Full-stack</option>
+					</select>
+				</div>
+			</div>
+
+			<div id="grid" class="grid">
+				<!-- Project cards inserted by JS -->
+			</div>
+
+			<p class="note">
+				Tip: Click "Repo" to view code, "Live" to open deployed app (if
+				available), or "Demo" to watch a short API walkthrough.
+			</p>
+
+			<footer>
+				Made by Niraj Modi —
+				<a
+					href="https://paardarshee.bio.link/"
+					target="_blank"
+					style="color: var(--accent); text-decoration: none"
+					>nirajmodi.me</a
+				>
+			</footer>
+		</div>
+
+		<script>
+			const projects = [
+				{
+					id: "clonegpt",
+					title: "CloneGPT — ChatGPT-like AI Web App",
+					type: "fullstack",
+					preview:
+						"ChatGPT-inspired web app replicating UI, functionality, and chat memory with file uploads",
+					desc: "Developed a ChatGPT-like AI platform using Next.js and React with full UI/UX replication including animations, modals, and mobile responsiveness. Integrated OpenAI API for real-time streaming responses and mem0 for persistent chat memory. Supported file and image uploads with Cloudinary and Uploadcare.",
+					tech: [
+						"Next.js",
+						"React",
+						"OpenAI API",
+						"mem0",
+						"Cloudinary",
+						"Uploadcare",
+						"Tailwind CSS",
+						"Zustand",
+						"Mongoose",
+					],
+					live: "https://gpt-eta-opal.vercel.app/",
+					repo: "https://github.com/paardarshee/gpt",
+					demo: "",
+				},
+				{
+					id: "focusedmind",
+					title: "Focused Mind — Chrome Extension",
+					type: "fullstack",
+					preview:
+						"Productivity Chrome extension with Pomodoro timer and website blocking",
+					desc: "Built a Chrome extension to boost productivity with Pomodoro timer, website blocking, and custom focus sessions. Used Manifest V3 and Chrome APIs with features like restricted nighttime edits and screen time alerts.",
+					tech: ["JavaScript", "Chrome APIs", "Manifest V3"],
+					live: "",
+					repo: "https://github.com/paardarshee/focused-mind",
+					demo: "",
+				},
+				{
+					id: "medimate",
+					title: "Medimate — Backend for Cervical Abnormality Detection",
+					type: "backend",
+					preview:
+						"FastAPI backend with JWT auth, CNN model integration, and PostgreSQL",
+					desc: "Built the backend of a cervical abnormality detection app with FastAPI, JWT auth, and REST APIs for users, reports, and diagnoses. Integrated a CNN model for real-time predictions with secure image uploads, file validation, and custom middleware. Designed modular API routes, role-based access, and database models using PostgreSQL for seamless Flutter integration.",
+					tech: ["Python", "FastAPI", "PostgreSQL"],
+					live: "",
+					repo: "https://github.com/AIML-medimate/python-backend",
+					demo: "",
+				},
+				{
+					id: "quilog",
+					title: "Quilog — Full-stack Blogging Platform",
+					type: "fullstack",
+					preview:
+						"Live blog platform with Markdown, auth, commenting, and likes",
+					desc: "Designed a feature-rich blog with Markdown, enhancing content formatting and readability. Developed robust authentication, profiles, and social integration for personalized interaction. Implemented engagement tools like likes and comments, fostering user interaction and feedback.",
+					tech: ["JavaScript", "React", "Next.js", "Tailwind CSS", "MongoDB"],
+					live: "https://quilog.vercel.app",
+					repo: "https://github.com/paardarshee/quilog",
+					demo: "",
+				},
+				{
+					id: "keepit",
+					title: "KEEP-IT — Offline Note App",
+					type: "fullstack",
+					preview:
+						"Note-taking app with offline-first IndexedDB storage and sync-ready structure",
+					desc: "Developed a frontend application for efficient note management. Designed a user-friendly interface, ensuring smooth user interactions.",
+					tech: ["React", "Material UI", "IndexedDB"],
+					live: "https://paardarshee.github.io/keep-it/",
+					repo: "https://github.com/paardarshee/keep-it",
+					demo: "",
+				},
+				{
+					id: "stackcalc",
+					title: "STACKCALC — Web Calculator",
+					type: "frontend",
+					preview:
+						"Calculator app implementing Stack Data Structure in JavaScript",
+					desc: "Created a web-based Calculator App with vanilla JavaScript for browser compatibility. Implemented Stack Data Structure in JavaScript for efficient app functionality.",
+					tech: ["HTML", "CSS", "JavaScript"],
+					live: "https://paardarshee.github.io/StackCalc/",
+					repo: "",
+					demo: "",
+				},
+			];
+			const grid = document.getElementById("grid");
+			const q = document.getElementById("q");
+			const filter = document.getElementById("filter");
+
+			function mkTag(t) {
+				return `<span class="tag">${t}</span>`;
+			}
+
+			function render(arr) {
+				grid.innerHTML = arr
+					.map(
+						(p) => `
+        <article class="card" data-type="${p.type}">
+          <div class="row">
+            <div>
+              <h3>${p.title}</h3>
+              <div class="meta"> <span class="highlight">${p.type.toUpperCase()}</span> • <span>${p.tech.join(
+							" • "
+						)}</span></div>
+            </div>
+            <div style="text-align:right"><small style="color:var(--muted)">Project</small></div>
+          </div>
+
+          <div class="preview">${p.preview}</div>
+          <p class="desc">${p.desc}</p>
+
+          <div class="tags">${p.tech.map((t) => mkTag(t)).join("")}</div>
+
+          <div style="margin-top:12px" class="actions">
+            ${
+							p.repo
+								? `<a class="btn" href="${p.repo}" target="_blank" rel="noopener noreferrer">Repo</a>`
+								: ""
+						}
+            ${
+							p.live
+								? `<a class="btn" href="${p.live}" target="_blank" rel="noopener noreferrer">Live</a>`
+								: ""
+						}
+            ${
+							p.demo
+								? `<a class="btn secondary" href="${p.demo}" target="_blank" rel="noopener noreferrer">Demo</a>`
+								: ""
+						}
+            ${
+							!p.live && !p.demo
+								? `<a class="btn secondary" href="#" onclick="alert('Demo or live not available. Repo & docs available.')">Request Demo</a>`
+								: ""
+						}
+          </div>
+        </article>
+      `
+					)
+					.join("");
+			}
+
+			render(projects);
+
+			function applyFilters() {
+				const qv = q.value.trim().toLowerCase();
+				const f = filter.value;
+				const out = projects.filter((p) => {
+					if (f !== "all" && p.type !== f) return false;
+					if (!qv) return true;
+					return (p.title + " " + p.desc + " " + p.tech.join(" "))
+						.toLowerCase()
+						.includes(qv);
+				});
+				render(out);
+			}
+
+			q.addEventListener("input", applyFilters);
+			filter.addEventListener("change", applyFilters);
+		</script>
+	</body>
+</html>
